@@ -1,0 +1,27 @@
+<%= form_for item, html: { multipart: true } do |f| %>
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label      :file %>
+    <%= f.file_field :file %>
+  </div>
+
+  <div class="field">
+    <%= f.label      :tag_list %>
+    <%= f.text_field :tag_list %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

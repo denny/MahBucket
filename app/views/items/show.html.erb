@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @item.file_file_name %>
+</p>
+<p>
+  <%= image_tag @item.file.url( :display, false ) %>
+</p>
+<p>
+  Tags: <% @item.tags.each do |tag| %>
+    <%= link_to( tag.name, tag ) %>,
+    <% end %>
+</p>
+<p>
+  <input type="text" size="100" value="<%= @item.file.url( :original, false ) %>">
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
