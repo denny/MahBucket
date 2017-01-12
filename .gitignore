@@ -25,3 +25,6 @@
 
 # Don't commit secrets
 .env
+
+# Or local test data
+/public/system
