@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>S3filemanager</title>
+    <title>Mah Bucket!!</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <%= render "/layouts/themes/#{Rails.configuration.settings['theme']['name']}/header" %>
+
     <%= yield %>
+
+    <%= render "/layouts/themes/#{Rails.configuration.settings['theme']['name']}/footer" %>
   </body>
 </html>
