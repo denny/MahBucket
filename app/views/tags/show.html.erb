@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @tag.name %>
+</p>
+<p>
+  <% Item.tagged_with( @tag.name ).each do |item| %>
+    <%= link_to item do %>
+      <%= image_tag item.file.url( :thumb, false ) %>
+    <% end %>
+  <% end %>
+</p>
+
+<%= link_to 'Back', acts_as_taggable_on_tag_index_path %>
