@@ -4,8 +4,8 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= image_tag item.file.url( :thumb, false ) %></td>
-        <td><%= item.file_file_name %></td>
+        <td><%= link_to item do %><%= image_tag item.file.url( :thumb, false ) %><% end %></td>
+        <td><%= link_to item do %><%= item.file_file_name %><% end %></td>
         <td><%= link_to 'Show',   item %></td>
         <td><%= link_to 'Edit',   edit_item_path(item) %></td>
         <td><%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
