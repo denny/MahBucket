@@ -8,8 +8,6 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
-# Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
 # Use postgres as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -34,13 +32,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# AWS S3
-gem 'paperclip'
-gem 'aws-sdk'
-
-# Tags
-gem 'acts-as-taggable-on'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -63,6 +54,14 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Authenticate via Google Account
+
+# Authenticate via Google OAuth
 gem 'omniauth'
 gem "omniauth-google-oauth2"
+
+# Store files on Amazon S3
+gem 'paperclip'
+gem 'aws-sdk'
+
+# Add tag features
+gem 'acts-as-taggable-on'
