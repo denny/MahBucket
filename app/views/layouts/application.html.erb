@@ -9,10 +9,10 @@
   </head>
 
   <body>
-    <%= render "layouts/themes/#{Rails.configuration.settings['theme']['name']}/header" %>
+    <%= render "layouts/themes/#{Rails.application.secrets.theme}/header" %>
 
     <%= yield %>
 
-    <%= render "layouts/themes/#{Rails.configuration.settings['theme']['name']}/footer" %>
+    <%= render "layouts/themes/#{Rails.application.secrets.theme}/footer" %>
   </body>
 </html>
