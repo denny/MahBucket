@@ -13,6 +13,9 @@
     <% end %>
 </p>
 
+<p>
+  Original: <input type="text" size="100" value="<%= @item.file.url( 'original', false ) %>">
+</p>
 <% @item.file.styles.each do |style,style_obj| %>
 <p>
   <%= style.capitalize %> (<%= style_obj.geometry %>): <input type="text" size="100" value="<%= @item.file.url( style, false ) %>">
