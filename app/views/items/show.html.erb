@@ -12,9 +12,12 @@
     <%= link_to( tag.name, tag ) %>,
     <% end %>
 </p>
+
+<% @item.file.styles.each do |style,style_obj| %>
 <p>
-  <input type="text" size="100" value="<%= @item.file.url( :original, false ) %>">
+  <%= style.capitalize %> (<%= style_obj.geometry %>): <input type="text" size="100" value="<%= @item.file.url( style, false ) %>">
 </p>
+<% end %>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
