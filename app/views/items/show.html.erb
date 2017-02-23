@@ -13,7 +13,7 @@
 </p>
 <p>
   Tags: <% @item.tags.each do |tag| %>
-    <%= link_to( tag.name, tag ) %>,
+    <%= link_to( tag.name, tag ) %><%= ', ' unless tag == @item.tags.last %>
     <% end %>
 </p>
 
