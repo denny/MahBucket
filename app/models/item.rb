@@ -9,6 +9,6 @@ class Item < ApplicationRecord
   # Check to see if the file is an image before generating thumbnails etc
   before_post_process :image?
   def image?
-    !(file_content_type =~ /^image.*/).nil?
+    /^image\/\w+/ === file_content_type
   end
 end
