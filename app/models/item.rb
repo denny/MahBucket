@@ -6,6 +6,10 @@ class Item < ApplicationRecord
   # Tagging
   acts_as_taggable
 
+  validates_uniqueness_of :file_fingerprint,
+    message: 'error: This file has already been uploaded - please try searching for it by filename or by tag.'
+  # TODO: link to previous upload (find by fingerprint)
+
   # Check to see if the file is an image before generating thumbnails etc
   before_post_process :image?
   def image?
