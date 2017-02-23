@@ -5,7 +5,11 @@
   <%= @item.file_file_name %>
 </p>
 <p>
+  <% if @item.image? %>
   <%= image_tag @item.file.url( :display, false ) %>
+  <% else %>
+  <%= image_tag "/themes/#{Rails.application.secrets.theme}/images/default-file-icon.png" %>
+  <% end %>
 </p>
 <p>
   Tags: <% @item.tags.each do |tag| %>
@@ -14,12 +18,14 @@
 </p>
 
 <p>
-  Original: <input type="text" size="100" value="<%= @item.file.url( 'original', false ) %>">
+  <% if @item.image? %>Original:<% else %>Link:<% end %>
+  <input type="text" size="100" value="<%= @item.file.url( 'original', false ) %>">
 </p>
 <% if @item.image? %>
   <% @item.file.styles.each do |style,style_obj| %>
   <p>
-    <%= style.capitalize %> (<%= style_obj.geometry %>): <input type="text" size="100" value="<%= @item.file.url( style, false ) %>">
+    <%= style.capitalize %> (<%= style_obj.geometry %>):
+    <input type="text" size="100" value="<%= @item.file.url( style, false ) %>">
   </p>
   <% end %>
 <% end %>
