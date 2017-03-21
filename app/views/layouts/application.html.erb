@@ -6,14 +6,14 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <%= render "layouts/themes/#{Rails.application.secrets.theme}/head" %>
+    <%= render "layouts/themes/#{theme}/head" %>
   </head>
 
   <body>
-    <%= render "layouts/themes/#{Rails.application.secrets.theme}/header" %>
+    <%= render "layouts/themes/#{theme}/header" %>
 
     <%= yield %>
 
-    <%= render "layouts/themes/#{Rails.application.secrets.theme}/footer" %>
+    <%= render "layouts/themes/#{theme}/footer" %>
   </body>
 </html>

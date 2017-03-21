@@ -5,7 +5,7 @@
   <% if item.image? %>
   <%= link_to item do %><%= image_tag item.file.url( :thumbnail, false ) %><% end %>
   <% else %>
-  <%= link_to item do %><%= image_tag "/themes/#{Rails.application.secrets.theme}/images/default-file-icon.png" %><% end %>
+  <%= link_to item do %><%= image_tag "/themes/#{theme}/images/default-file-icon.png" %><% end %>
   <% end %>
   <br>
   <%= link_to item do %><%= item.file_file_name %><% end %>

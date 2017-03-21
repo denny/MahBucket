@@ -6,7 +6,7 @@
   <% if @item.image? %>
   <%= image_tag @item.file.url( :display, false ) %>
   <% else %>
-  <%= image_tag "/themes/#{Rails.application.secrets.theme}/images/default-file-icon.png" %>
+  <%= image_tag "/themes/#{theme}/images/default-file-icon.png" %>
   <% end %>
 </p>
 <p>
