@@ -15,7 +15,7 @@
 </h3>
 <p>
   <% @tag_results.each do |tag| %>
-    <%= link_to tag.name, tag %>,
+    <%= link_to tag.name, tag %><%= ', ' unless tag == @tag_results.last %>
   <% end %>
 </p>
 <% end %>
@@ -26,7 +26,7 @@
 </h3>
 <p>
   <% @filename_results.each do |item| %>
-    <%= link_to item.file_file_name, item %>,
+    <%= link_to item.file_file_name, item %><%= ', ' unless item == @filename_results.last %>
   <% end %>
 </p>
 <% end %>
