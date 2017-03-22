@@ -16,13 +16,13 @@
 </p>
 
 <p>
-  <% if @item.image? %>Original:<% else %>Link:<% end %>
+  <% if @item.image? %>Original (<%= @item.file.width %>x<%= @item.file.height %>):<% else %>Link:<% end %>
   <input type="text" size="100" value="<%= @item.file.url( 'original', false ) %>">
 </p>
 <% if @item.image? %>
   <% @item.file.styles.each do |style,style_obj| %>
   <p>
-    <%= style.capitalize %> (<%= style_obj.geometry %>):
+    <%= style.capitalize %> (<%= @item.file.width(style) %>x<%= @item.file.height(style) %>):
     <input type="text" size="100" value="<%= @item.file.url( style, false ) %>">
   </p>
   <% end %>

@@ -60,8 +60,9 @@ gem 'omniauth'
 gem "omniauth-google-oauth2"
 
 # Store files on Amazon S3
-gem 'paperclip'
 gem 'aws-sdk'
+gem 'paperclip'
+gem 'paperclip-meta'
 
 # Add tag features
 gem 'acts-as-taggable-on'
