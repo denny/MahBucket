@@ -21,12 +21,15 @@
 <% end %>
 
 <% unless @filename_results.blank? %>
+<br>
 <h3>
-  Filenames
+  Files
 </h3>
 <p>
   <% @filename_results.each do |item| %>
-    <%= link_to item.file_file_name, item %><%= ', ' unless item == @filename_results.last %>
+    <%= render partial: 'items/item', locals: { item: item } %>
   <% end %>
 </p>
 <% end %>
+
+<div style="clear: both;"></div>
