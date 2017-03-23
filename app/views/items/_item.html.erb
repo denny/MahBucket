@@ -1,0 +1,13 @@
+<div style="float: left; width: 180px; min-height: 160px; margin: 10px; overflow: hidden;">
+  <% if item.image? %>
+  <%= link_to item do %><%= image_tag item.file.url( :thumbnail, false ) %><% end %>
+  <% else %>
+  <%= link_to item do %><%= image_tag "/themes/#{theme}/images/default-file-icon.png" %><% end %>
+  <% end %>
+  <br>
+  <%= link_to item do %><%= item.file_file_name %><% end %>
+  <br>
+  <%= link_to 'Show',   item %>
+  <%= link_to 'Edit',   edit_item_path(item) %>
+  <%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
