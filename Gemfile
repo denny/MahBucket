@@ -66,3 +66,6 @@ gem 'paperclip-meta'
 
 # Add tag features
 gem 'acts-as-taggable-on'
+
+# Pagination
+gem 'kaminari'

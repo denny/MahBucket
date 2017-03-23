@@ -1,7 +1,5 @@
-<h1>Files</h1>
-
 <% @items.each do |item| %>
-<div style="float: left; min-width: 200px; min-height: 200px;">
+<div style="float: left; width: 180px; min-height: 160px; margin: 10px; overflow: hidden;">
   <% if item.image? %>
   <%= link_to item do %><%= image_tag item.file.url( :thumbnail, false ) %><% end %>
   <% else %>
@@ -17,5 +15,9 @@
 <% end %>
 
 <div style="clear: both;"></div>
+
+<%= paginate @items %>
+
+<br>
 
 <%= button_to 'Upload new file', new_item_path, method: :get %>
