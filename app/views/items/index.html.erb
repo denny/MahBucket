@@ -1,3 +1,11 @@
+<% if @items.empty? %>
+
+<p>
+    You have not added any items yet.
+</p>
+
+<% else %>
+
 <% @items.each do |item| %>
 <%= render partial: 'item', locals: { item: item } %>
 <% end %>
@@ -9,3 +17,5 @@
 <br>
 
 <%= button_to 'Upload new file', new_item_path, method: :get %>
+
+<% end %>
