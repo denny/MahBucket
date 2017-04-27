@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
       session[ :name  ] = auth_hash['info']['name' ]
       redirect_to '/'
     else
-      render text: 'Unauthorized', status: :unauthorized
+      render html: '<p>Unauthori<blink>s</blink>ed</p>', status: :unauthorized
     end
   end
 
