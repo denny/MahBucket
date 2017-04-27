@@ -45,6 +45,10 @@ the following command: export $(cat .env | grep -v ^# | xargs)
 
 * How to run the test suite
 
+  rspec
+
+Circle CI status: [![CircleCI](https://circleci.com/gh/38dgs/MahBucket.svg?style=svg)](https://circleci.com/gh/38dgs/MahBucket)
+
 
 * Services
 
