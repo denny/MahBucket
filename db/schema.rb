@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20170321151637) do
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
     t.string   "file_fingerprint"
-    t.text     "meta"
+    t.text     "file_meta"
   end
 
   create_table "taggings", force: :cascade do |t|
