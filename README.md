@@ -34,18 +34,23 @@ the following command: export $(cat .env | grep -v ^# | xargs)
 
 * Database creation
 
-  rake db:migrate
-
+```
+rake db:migrate
+```
 
 * Database initialization
 
-  psql
-  create database mahbucket;
-
+```
+psql
+create database mahbucket;
+```
 
 * How to run the test suite
 
-  rspec
+
+```
+rspec
+```
 
 Circle CI status: [![CircleCI](https://circleci.com/gh/38dgs/MahBucket.svg?style=svg)](https://circleci.com/gh/38dgs/MahBucket)
 
