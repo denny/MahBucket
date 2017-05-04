@@ -41,6 +41,8 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
   gem 'capybara'
+  # Audit gems for security vulnerabilities
+  gem 'bundler-audit', require: false
 end
 
 group :development do
