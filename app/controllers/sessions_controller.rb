@@ -1,3 +1,4 @@
+# Sessions controller
 class SessionsController < ApplicationController
   def create
     if auth_hash and auth_hash['info']['email'].split('@')[1] == ENV['GOOGLE_OAUTH_DOMAIN']

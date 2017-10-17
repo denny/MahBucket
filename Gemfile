@@ -35,35 +35,6 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-#  gem 'byebug', platform: :mri
-  gem 'pry-rails'
-  gem 'rspec-rails', '~> 3.5'
-  gem 'capybara'
-  # Audit gems for security vulnerabilities
-  gem 'bundler-audit', require: false
-end
-
-group :development do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '~> 3.0.5'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rails-erd'
-end
-
-group :test do
-  gem 'database_cleaner'
-  gem 'selenium-webdriver'
-end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-
 # Authenticate via Google OAuth
 gem 'omniauth'
 gem "omniauth-google-oauth2"
@@ -78,3 +49,33 @@ gem 'acts-as-taggable-on'
 
 # Pagination
 gem 'kaminari'
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+#  gem 'byebug', platform: :mri
+  gem 'pry-rails'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'capybara'
+  # Audit gems for security vulnerabilities
+  gem 'bundler-audit', require: false
+end
+
+group :development do
+  gem 'listen', '~> 3.0.5'
+  # Check/enforce coding style guidelines
+  gem 'rubocop', require: false
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rails-erd'
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'web-console', '>= 3.3.0'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'selenium-webdriver'
+end

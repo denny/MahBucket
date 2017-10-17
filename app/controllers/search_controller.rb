@@ -1,3 +1,4 @@
+# Search controller
 class SearchController < ApplicationController
   def search
     if params[:q].present?

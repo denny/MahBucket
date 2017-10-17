@@ -1,5 +1,5 @@
+# Tag controller
 class TagsController < ApplicationController
-
   # GET /tags
   # GET /tags.json
   def index
@@ -15,5 +15,4 @@ class TagsController < ApplicationController
   def show
     @tag = ActsAsTaggableOn::Tag.find( params[:id] )
   end
-
 end
