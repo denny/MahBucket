@@ -42,6 +42,8 @@ GEM
       activerecord (>= 4.0)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
+    archive-zip (0.7.0)
+      io-like (~> 0.3.0)
     arel (7.1.4)
     ast (2.3.0)
     aws-sdk (2.6.41)
@@ -66,8 +68,10 @@ GEM
     childprocess (0.6.3)
       ffi (~> 1.0, >= 1.0.11)
     choice (0.2.0)
-    climate_control (0.0.3)
-      activesupport (>= 3.0)
+    chromedriver-helper (1.1.0)
+      archive-zip (~> 0.7.0)
+      nokogiri (~> 1.6)
+    climate_control (0.2.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.1)
@@ -90,7 +94,8 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hashie (3.4.6)
-    i18n (0.8.1)
+    i18n (0.8.6)
+    io-like (0.3.0)
     jbuilder (2.6.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -125,7 +130,7 @@ GEM
     mime-types-data (3.2016.0521)
     mimemagic (0.3.2)
     mini_portile2 (2.1.0)
-    minitest (5.10.1)
+    minitest (5.10.2)
     multi_json (1.12.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -289,6 +294,7 @@ DEPENDENCIES
   aws-sdk
   bundler-audit
   capybara
+  chromedriver-helper
   coffee-rails (~> 4.2)
   database_cleaner
   jbuilder (~> 2.5)

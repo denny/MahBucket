@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate
-    unless session[:email] or request.path =~ /google_oauth2/
+    unless session[:email] or request.path =~ /google_oauth2/ or ENV['DISABLE_AUTH']
       redirect_to '/auth/google_oauth2'
     end
   end
