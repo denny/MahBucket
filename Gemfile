@@ -36,12 +36,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Authenticate via Google OAuth
-gem 'omniauth'
+gem 'omniauth', '~> 1.3.2'
 gem "omniauth-google-oauth2"
 
 # Store files on Amazon S3
 gem 'aws-sdk'
-gem 'paperclip'
+gem 'paperclip', '~> 5.2.0'
 gem 'paperclip-meta'
 
 # Add tag features
