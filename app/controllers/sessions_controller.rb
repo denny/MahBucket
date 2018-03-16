@@ -1,3 +1,4 @@
+# Sessions controller
 class SessionsController < ApplicationController
   def create
     if auth_hash and auth_hash['info']['email'].split('@')[1] == ENV['GOOGLE_OAUTH_DOMAIN']
@@ -5,7 +6,7 @@ class SessionsController < ApplicationController
       session[ :name  ] = auth_hash['info']['name' ]
       redirect_to '/'
     else
-      render text: 'Unauthorized', status: :unauthorized
+      render html: '<p>Unauthori<blink>s</blink>ed</p>', status: :unauthorized
     end
   end
 

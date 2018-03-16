@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mah Bucket!!</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= render "layouts/themes/#{theme}/head" %>
   </head>
 
   <body>
-    <%= render "layouts/themes/#{Rails.configuration.settings['theme']['name']}/header" %>
+    <%= render "layouts/themes/#{theme}/header" %>
 
     <%= yield %>
 
-    <%= render "layouts/themes/#{Rails.configuration.settings['theme']['name']}/footer" %>
+    <%= render "layouts/themes/#{theme}/footer" %>
   </body>
 </html>

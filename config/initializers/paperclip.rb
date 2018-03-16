@@ -13,6 +13,6 @@ if ENV['AWS_ACCESS_KEY_ID']
   Paperclip::Attachment.default_options[ :s3_credentials ] = {
       access_key_id:     ENV.fetch( 'AWS_ACCESS_KEY_ID'     ),
       secret_access_key: ENV.fetch( 'AWS_SECRET_ACCESS_KEY' ),
-      bucket:            ENV.fetch( 'S3_BUCKET'             ),
+      bucket:            ENV.fetch( 'S3_BUCKET'             )
   }
 end

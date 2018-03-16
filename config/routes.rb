@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # Tags
   resources :tags, as: :acts_as_taggable_on_tag
 
+  # Search
+  get '/search', to: 'search#search'
+
   # OmniAuth
   get '/auth/:provider/callback', to: 'sessions#create'
 end

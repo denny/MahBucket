@@ -1,0 +1,35 @@
+<h1>
+  Search
+</h1>
+
+<p>
+  <%= form_tag '/search', method: :get do %>
+    <%= search_field_tag 'q' %>
+    <%= button_tag 'Search', name: '' %>
+  <% end %>
+</p>
+
+<% unless @tag_results.blank? %>
+<h3>
+  Tags
+</h3>
+<p>
+  <% @tag_results.each do |tag| %>
+    <%= link_to tag.name, tag %><%= ', ' unless tag == @tag_results.last %>
+  <% end %>
+</p>
+<% end %>
+
+<% unless @filename_results.blank? %>
+<br>
+<h3>
+  Files
+</h3>
+<p>
+  <% @filename_results.each do |item| %>
+    <%= render partial: 'items/item', locals: { item: item } %>
+  <% end %>
+</p>
+<% end %>
+
+<div style="clear: both;"></div>

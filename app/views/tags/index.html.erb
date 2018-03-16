@@ -1,6 +1,13 @@
 <h1>Tags</h1>
 
 <p>
+  <%= form_tag '/search', method: :get do %>
+    <%= search_field_tag 'q' %>
+    <%= button_tag 'Search', name: '' %>
+  <% end %>
+</p>
+
+<p>
   <% @tags.each do |tag| %>
     <%= link_to tag.name, tag %>,
   <% end %>

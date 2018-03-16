@@ -17,10 +17,13 @@
 !/log/.keep
 !/tmp/.keep
 
-# Ignore Byebug command history file.
+# Byebug command history file.
 .byebug_history
 
-# Ignore text editor backup files
+# Rspec fail history
+/spec/examples.txt
+
+# Text editor backup files
 *~
 
 # Don't commit secrets
