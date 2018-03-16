@@ -56,7 +56,7 @@ create database mahbucket;
 rspec
 ```
 
-Circle CI status: [![CircleCI](https://circleci.com/gh/38dgs/MahBucket.svg?style=svg)](https://circleci.com/gh/38dgs/MahBucket)
+Circle CI status: [![CircleCI](https://circleci.com/gh/denny/MahBucket.svg?style=svg)](https://circleci.com/gh/denny/MahBucket)
 
 
 ## Services
