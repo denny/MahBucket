@@ -40,7 +40,7 @@ gem 'omniauth', '~> 1.8.1'
 gem "omniauth-google-oauth2"
 
 # Store files on Amazon S3
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 2.0'
 gem 'paperclip', '~> 5.2.0'
 gem 'paperclip-meta'
 
