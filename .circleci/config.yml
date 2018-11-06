@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # Specify the version you desire here
-      - image: circleci/ruby:2.4.3-node-browsers
+      - image: circleci/ruby:2.5.1-node-browsers
         environment:
         - RACK_ENV=test
         - DATABASE_URL=postgres://testuser:@127.0.0.1:5432/mahbucket_test
