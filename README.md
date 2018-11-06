@@ -71,12 +71,12 @@ and Google OAuth for authentication.
 
 ## Author
 
-Mah Bucket was written by Denny de la Haye <2017@denny.me>
+Mah Bucket was written by Denny de la Haye <2018@denny.me>
 
 
 ## Copyright
 
-(c) 2017 Denny de la Haye
+(c) 2017-2018 Denny de la Haye
 
 
 ## Credits
