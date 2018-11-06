@@ -8,7 +8,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.1'
+gem 'rails', '~> 5.2.0'
 # Use postgres as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -37,12 +37,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Authenticate via Google OAuth
-gem 'omniauth'
+gem 'omniauth', '~> 1.8.1'
 gem "omniauth-google-oauth2"
 
 # Store files on Amazon S3
-gem 'aws-sdk'
-gem 'paperclip'
+gem 'aws-sdk', '~> 2.0'
+gem 'paperclip', '~> 5.2.0'
 gem 'paperclip-meta'
 
 # Add tag features

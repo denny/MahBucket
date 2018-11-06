@@ -9,8 +9,9 @@ should hopefully be useful (or at least usable) for other file types too.
 ## Ruby version
 
   Mah Bucket was developed using Ruby 2.3.1 and 2.3.3, but will very probably
-  work with earlier versions too.  If you find a version it won't run with,
-  please let me know (by email, or by providing a patch to this README file).
+  work with earlier and later versions too.  If you find a version it won't run
+  with, please let me know (by email, or by providing a patch to this README
+  file).
 
 
 ## System dependencies
@@ -56,7 +57,7 @@ create database mahbucket;
 rspec
 ```
 
-Circle CI status: [![CircleCI](https://circleci.com/gh/38dgs/MahBucket.svg?style=svg)](https://circleci.com/gh/38dgs/MahBucket)
+Circle CI status: [![CircleCI](https://circleci.com/gh/denny/MahBucket.svg?style=svg)](https://circleci.com/gh/denny/MahBucket)
 
 
 ## Services
