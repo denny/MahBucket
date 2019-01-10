@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Authenticate via Google OAuth
-gem 'omniauth', '~> 1.8.1'
+gem 'omniauth', '~> 1.9.0'
 gem "omniauth-google-oauth2"
 
 # Store files on Amazon S3
