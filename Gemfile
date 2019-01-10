@@ -8,7 +8,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 5.2.2'
 # Use postgres as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Authenticate via Google OAuth
-gem 'omniauth', '~> 1.8.1'
+gem 'omniauth', '~> 1.9.0'
 gem "omniauth-google-oauth2"
 
 # Store files on Amazon S3
@@ -68,7 +68,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'listen', '~> 3.0.5'
+  gem 'listen', '~> 3.1.5'
   # Check/enforce coding style guidelines
   gem 'rubocop', require: false
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
