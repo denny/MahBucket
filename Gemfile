@@ -41,8 +41,8 @@ gem 'omniauth', '~> 1.9.0'
 gem "omniauth-google-oauth2"
 
 # Store files on Amazon S3
-gem 'aws-sdk', '~> 2.0'
-gem 'paperclip', '~> 5.2.0'
+gem 'aws-sdk', '~> 3.0'
+gem 'paperclip', '~> 6.1.0'
 gem 'paperclip-meta'
 
 # Add tag features
