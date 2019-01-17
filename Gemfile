@@ -80,6 +80,7 @@ group :development do
 end
 
 group :test do
+  gem 'codecov', require: false
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem "chromedriver-helper"
