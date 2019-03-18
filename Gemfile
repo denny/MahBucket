@@ -61,7 +61,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 #  gem 'byebug', platform: :mri
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 3.8'
   gem 'capybara'
   # Audit gems for security vulnerabilities
   gem 'bundler-audit', require: false
@@ -80,6 +80,7 @@ group :development do
 end
 
 group :test do
+  gem 'codecov', require: false
   gem 'database_cleaner'
   gem 'selenium-webdriver'
   gem "chromedriver-helper"
