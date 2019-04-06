@@ -871,7 +871,7 @@ GEM
       pry (>= 0.10.4)
     psych (3.1.0)
     public_suffix (3.0.3)
-    puma (3.12.0)
+    puma (3.12.1)
     rack (2.0.6)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -1018,7 +1018,7 @@ DEPENDENCIES
   paperclip-meta
   pg
   pry-rails
-  puma (~> 3.0)
+  puma (~> 3.12)
   rails (~> 5.2.3)
   rails-erd
   rspec-rails (~> 3.8)
