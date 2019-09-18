@@ -20,7 +20,7 @@ jobs:
           - POSTGRES_USER=testuser
           - POSTGRES_DB=mahbucket_test
 
-    working_directory: ~/member-portal
+    working_directory: ~/mahbucket
 
     steps:
       - checkout
