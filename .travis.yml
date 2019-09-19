@@ -1,18 +1,23 @@
+dist: xenial
+sudo: true
+
 language: ruby
 
 services:
   - postgresql
 
 addons:
+  chrome: stable
   apt:
-    - google-chrome-stable
-    - chromium-chromedriver
+    packages:
+      - chromium-chromedriver
 
 before_install: gem install bundler -v '< 2.0'
 
 before_script:
   - cp config/database.yml.travis config/database.yml
   - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 script:
   - bundle install
