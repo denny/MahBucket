@@ -3,10 +3,16 @@ language: ruby
 services:
   - postgresql
 
+addons:
+  apt:
+    - google-chrome-stable
+    - chromium-chromedriver
+
 before_install: gem install bundler -v '< 2.0'
 
 before_script:
   - cp config/database.yml.travis config/database.yml
+  - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
 
 script:
   - bundle install
