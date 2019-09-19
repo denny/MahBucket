@@ -1,3 +1,11 @@
 language: ruby
+
+services:
+  - postgresql
+
+before_script:
+  - cp config/database.yml.travis config/database.yml
+
 before_install: gem install bundler -v '< 2.0'
+
 script: bundle exec rspec
