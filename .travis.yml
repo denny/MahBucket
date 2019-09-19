@@ -3,9 +3,13 @@ language: ruby
 services:
   - postgresql
 
-before_script:
-  - cp config/database.yml.travis config/database.yml
-
 before_install: gem install bundler -v '< 2.0'
 
-script: bundle exec rspec
+before_script:
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database mahbucket_test;' -U postgres
+
+script:
+    - bundle install
+    - bundle exec rake db:setup
+    - bundle exec rspec
