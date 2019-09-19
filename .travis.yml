@@ -22,4 +22,4 @@ before_script:
 script:
   - bundle install
   - bundle exec rake db:setup
-  - xvfb-run bundle exec rspec
+  - xvfb-run -a bundle exec rspec
