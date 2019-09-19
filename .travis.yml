@@ -8,11 +8,7 @@ services:
   - xvfb
 
 addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+  chrome: stable
 
 before_install: gem install bundler -v '< 2.0'
 
