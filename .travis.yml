@@ -9,6 +9,6 @@ before_script:
   - cp config/database.yml.travis config/database.yml
 
 script:
-    - bundle install
-    - bundle exec rake db:setup
-    - bundle exec rspec
+  - bundle install
+  - bundle exec rake db:setup
+  - bundle exec rspec
