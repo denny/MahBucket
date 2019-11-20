@@ -759,7 +759,7 @@ GEM
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
     climate_control (0.2.0)
-    codecov (0.1.15)
+    codecov (0.1.16)
       json
       simplecov
       url
