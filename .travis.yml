@@ -2,15 +2,16 @@ dist: xenial
 sudo: required
 
 language: ruby
+cache: bundler
+
+addons:
+  postgresql: 10
 
 services:
-  - postgresql
   - xvfb
 
 addons:
   chrome: stable
-
-before_install: gem install bundler -v '< 2.0'
 
 before_script:
   - cp config/database.yml.travis config/database.yml
