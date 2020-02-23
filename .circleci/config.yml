@@ -1,23 +1,25 @@
 # Ruby CircleCI 2.0 configuration file
 #
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
-#
+
 version: 2
 jobs:
   build:
     docker:
       # Specify the version you desire here
-      - image: circleci/ruby:2.5.1-node-browsers
+      - image: circleci/ruby:2.6.5-node-browsers
         environment:
         - RACK_ENV=test
-        - DATABASE_URL=postgres://testuser:@127.0.0.1:5432/mahbucket_test
+        - RAILS_ENV=test
+        - DATABASE_URL=postgres://testuser:testpass@127.0.0.1:5432/mahbucket_test
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
-      - image: circleci/postgres:9.6
+      - image: circleci/postgres:10-ram
         environment:
           - POSTGRES_USER=testuser
+          - POSTGRES_PASSWORD=testpass
           - POSTGRES_DB=mahbucket_test
 
     working_directory: ~/mahbucket
