@@ -1,5 +1,6 @@
 source 'https://rubygems.org' do
   gem 'rails', '~> 5.2.3'
+
   # Use postgres as the database for Active Record
   gem 'pg'
   # Use Puma as the app server
