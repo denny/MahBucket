@@ -57,8 +57,6 @@ create database mahbucket;
 rspec
 ```
 
-Circle CI status: [![CircleCI](https://circleci.com/gh/38dgs/MahBucket.svg?style=svg)](https://circleci.com/gh/38dgs/MahBucket)
-
 
 ## Services
 
@@ -84,3 +82,8 @@ Mah Bucket was written by Denny de la Haye <2018@denny.me>
 Initial development was largely paid for by 38 Degrees (38degrees.org.uk)
 
 Initial development was greatly assisted by Eliot Sykes (eliotsykes.com)
+
+
+## Current Status
+
+[![CircleCI](https://circleci.com/gh/denny/MahBucket.svg?style=svg)](https://circleci.com/gh/denny/MahBucket) (CircleCI)  [![Travis CI](https://travis-ci.org/denny/MahBucket.svg?branch=master)](https://travis-ci.org/denny/MahBucket) (Travis CI)  [![codecov](https://codecov.io/gh/denny/MahBucket/branch/master/graph/badge.svg)](https://codecov.io/gh/denny/MahBucket) (CodeCov)  [![CodeClimate](https://api.codeclimate.com/v1/badges/7bc3b576f0265db7b8f8/maintainability)](https://codeclimate.com/github/denny/MahBucket/maintainability) (Code Climate)

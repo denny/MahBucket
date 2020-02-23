@@ -8,18 +8,19 @@ class ApplicationController < ActionController::Base
   private
 
   def check_ip_whitelist
-    if Rails.env.production?
-      if Rails.application.secrets.permitted_ips
-        unless Rails.application.secrets.permitted_ips.split(',').include? request.ip
-          render text: 'Access Denied', status: :unauthorized
-        end
-      end
-    end
+    return unless Rails.env.production?
+    return if Rails.application.secrets.permitted_ips.blank?
+    return if Rails.application.secrets.permitted_ips
+                   .split(',').include? request.ip
+
+    render text: 'Access Denied', status: :unauthorized
   end
 
   def authenticate
-    unless session[:email] or request.path =~ /google_oauth2/ or ENV['DISABLE_AUTH']
-      redirect_to '/auth/google_oauth2'
-    end
+    return if session[:email]
+    return if request.path =~ /google_oauth2/
+    return if ENV['DISABLE_AUTH']
+
+    redirect_to '/auth/google_oauth2'
   end
 end
