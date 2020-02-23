@@ -1,17 +1,17 @@
-dist: xenial
+dist: bionic
 sudo: required
 
 language: ruby
+
 cache: bundler
 
-addons:
-  postgresql: 10
-
 services:
+  - postgresql
   - xvfb
 
 addons:
   chrome: stable
+  # postgresql: 10
 
 before_script:
   - cp config/database.yml.travis config/database.yml
