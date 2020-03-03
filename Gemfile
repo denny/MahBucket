@@ -24,7 +24,7 @@ source 'https://rubygems.org' do
   # gem 'bcrypt', '~> 3.1.7'
 
   # Authenticate via Google OAuth
-  gem 'omniauth', '~> 1.9.0'
+  gem 'omniauth', '~> 1.9.1'
   gem 'omniauth-google-oauth2'
 
   # Store files on Amazon S3
