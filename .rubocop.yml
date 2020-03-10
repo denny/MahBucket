@@ -106,8 +106,6 @@ Naming/FileName:
   Enabled: false
 Style/AndOr:
   Enabled: false
-Style/BracesAroundHashParameters:
-  Enabled: false
 Style/CaseEquality:
   Enabled: false
 Style/ClassAndModuleChildren:
