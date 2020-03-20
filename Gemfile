@@ -1,5 +1,5 @@
 source 'https://rubygems.org' do
-  gem 'rails', '~> 5.2.3'
+  gem 'rails', '~> 6.0.2'
 
   # Use postgres as the database for Active Record
   gem 'pg'
@@ -28,7 +28,7 @@ source 'https://rubygems.org' do
   gem 'omniauth-google-oauth2'
 
   # Store files on Amazon S3
-  gem 'aws-sdk', '~> 3.0'
+  gem 'aws-sdk-s3'
   gem 'paperclip', '~> 6.1.0'
   gem 'paperclip-meta'
 
@@ -57,9 +57,9 @@ source 'https://rubygems.org' do
   end
 
   group :test do
-    gem 'chromedriver-helper'
     gem 'codecov', require: false
     gem 'database_cleaner'
     gem 'selenium-webdriver'
+    gem 'webdrivers', '~> 3.0'
   end
 end
