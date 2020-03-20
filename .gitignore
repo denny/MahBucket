@@ -29,5 +29,6 @@
 # Don't commit secrets
 .env
 
-# Or local test data
+# Or test cruft
 /public/system
+/coverage
