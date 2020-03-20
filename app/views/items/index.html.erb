@@ -1,4 +1,4 @@
-<% if @items.empty? %>
+<% if @items.blank? %>
 
 <p>
     You have not added any items yet.
@@ -19,5 +19,3 @@
 <br>
 
 <%= button_to 'Upload new file', new_item_path, method: :get %>
-
-
