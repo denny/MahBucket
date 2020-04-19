@@ -46,7 +46,7 @@ source 'https://rubygems.org' do
     gem 'bundler-audit', require: false
     gem 'capybara'
     gem 'pry-rails'
-    gem 'rspec-rails', '~> 3.9'
+    gem 'rspec-rails', '~> 4.0'
   end
 
   group :development do
