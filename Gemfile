@@ -46,7 +46,7 @@ source 'https://rubygems.org' do
     gem 'bundler-audit', require: false
     gem 'capybara'
     gem 'pry-rails'
-    gem 'rspec-rails', '~> 3.9'
+    gem 'rspec-rails', '~> 4.0'
   end
 
   group :development do
@@ -60,6 +60,6 @@ source 'https://rubygems.org' do
     gem 'codecov', require: false
     gem 'database_cleaner'
     gem 'selenium-webdriver'
-    gem 'webdrivers', '~> 3.0'
+    gem 'webdrivers', '~> 4.3'
   end
 end
