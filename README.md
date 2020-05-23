@@ -68,9 +68,9 @@ Mah Bucket was written by Denny de la Haye <2020@denny.me>
 
 ## Credits
 
-Initial development was largely paid for by [![38 Degrees](https://38degrees.org.uk)]
+Initial development was largely paid for by [38 Degrees](https://38degrees.org.uk)
 
-Initial development was greatly assisted by [![Eliot Sykes](https://eliotsykes.com)]
+Initial development was greatly assisted by [Eliot Sykes](https://eliotsykes.com)
 
 
 ## Current Status
