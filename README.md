@@ -58,7 +58,7 @@ the following command: export $(cat .env | grep -v ^# | xargs)
 
 ## Author
 
-Mah Bucket was written by Denny de la Haye <2018@denny.me>
+Mah Bucket was written by Denny de la Haye <2020@denny.me>
 
 
 ## Copyright
