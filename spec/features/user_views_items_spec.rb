@@ -1,25 +1,37 @@
 require 'rails_helper'
 
 RSpec.feature "User views items", type: :feature, js: true do
-    scenario 'successfully' do
-        visit '/'
+  before :each do
 
-        expect( page ).to have_css 'a[href="/search"]'
-    end
+  end
 
-    scenario 'sees "no items yet" notice' do
-        visit '/'
+  scenario 'successfully' do
+    visit '/'
 
-        expect( page ).to have_text 'You have not added any items yet'
-    end
+    expect( page ).to have_css 'a[href="/search"]'
+  end
 
-    scenario 'sees newly-added items' do
-      Item.create!( file: File.new( Rails.root + 'spec/fixtures/mah-bucket.jpg' ) )
-      Item.create!( file: File.new( Rails.root + 'spec/fixtures/test.txt' ) )
+  scenario 'sees "no items yet" notice' do
+    visit '/'
 
-      visit '/'
+    expect( page ).to have_text 'You have not added any items yet'
+  end
 
-      expect( page ).to have_link 'mah-bucket.jpg'
-      expect( page ).to have_link 'test.txt'
-    end
+  scenario 'sees newly-added items' do
+    Item.create!( file: File.new( Rails.root + 'spec/fixtures/mah-bucket.jpg' ) )
+    Item.create!( file: File.new( Rails.root + 'spec/fixtures/test.txt' ) )
+
+    visit '/'
+
+    expect( page ).to have_link 'mah-bucket.jpg'
+    expect( page ).to have_link 'test.txt'
+  end
+
+  scenario 'but is foiled by IP restriction' do
+    allow( Rails.application.secrets ).to receive( :permitted_ips ).and_return( 'FAIL' )
+
+    visit '/'
+
+    expect( page ).to have_text 'Access Denied'
+  end
 end
