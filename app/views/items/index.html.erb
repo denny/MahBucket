@@ -1,10 +1,4 @@
-<% if @items.empty? %>
-
-<p>
-    You have not added any items yet.
-</p>
-
-<% else %>
+<% if @items.present? %>
 
 <% @items.each do |item| %>
 <%= render partial: 'item', locals: { item: item } %>
@@ -14,10 +8,14 @@
 
 <%= paginate @items %>
 
+<% else %>
+
+<p>
+    You have not added any items yet.
+</p>
+
 <% end %>
 
 <br>
 
 <%= button_to 'Upload new file', new_item_path, method: :get %>
-
-
