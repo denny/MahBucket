@@ -1,10 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature "User views items", type: :feature, js: true do
-  before :each do
-
-  end
-
   scenario 'successfully' do
     visit '/'
 
