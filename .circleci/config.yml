@@ -1,22 +1,18 @@
-# Ruby CircleCI 2.0 configuration file
+# CircleCI 2.0 configuration file
 #
-# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+# Check https://circleci.com/docs/2.0/language-ruby for more details
 
 version: 2
 jobs:
   build:
     docker:
-      # Specify the version you desire here
-      - image: circleci/ruby:2.6.5-node-browsers
+      - image: circleci/ruby:2.7.1-node-browsers
         environment:
         - RACK_ENV=test
         - RAILS_ENV=test
         - DATABASE_URL=postgres://testuser:testpass@127.0.0.1:5432/mahbucket_test
 
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      - image: circleci/postgres:10-ram
+      - image: circleci/postgres:10-alpine-ram
         environment:
           - POSTGRES_USER=testuser
           - POSTGRES_PASSWORD=testpass
@@ -27,50 +23,45 @@ jobs:
     steps:
       - checkout
 
-      # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "Gemfile.lock" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+          - bundle-cache-{{ checksum "Gemfile.lock" }}
+          - bundle-cache-
 
       - run:
           name: install dependencies
           command: |
-            gem install bundler -v '< 2.0'
             bundle install --jobs=4 --retry=3 --path vendor/bundle
 
       - run:
           name: Install Chromedriver latest version
           command: |
-            sudo apt-get update
-            sudo apt-get install lsb-release libappindicator3-1 libgbm1
+            sudo apt update
+            sudo apt install lsb-release libappindicator3-1 libgbm1
             curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
             sudo dpkg -i google-chrome.deb
             sudo sed -i 's|HERE/chrome"|HERE/chrome" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome
-            rm google-chrome.deb
 
       - save_cache:
           paths:
             - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+          key: bundle-cache-{{ checksum "Gemfile.lock" }}
 
-      # Database setup
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:schema:load
+      - run:
+          name: Set up database
+          command: |
+            bundle exec rake db:create db:schema:load
 
-      # run tests!
       - run:
           name: Run tests
           command: |
             mkdir /tmp/test-results
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
-
             bundle exec rspec
 
-      # collect reports
       - store_test_results:
           path: /tmp/test-results
+
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
