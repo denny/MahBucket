@@ -8,12 +8,11 @@ class ApplicationController < ActionController::Base
   private
 
   def check_ip_whitelist
-    return unless Rails.env.production?
+    return if Rails.env.development?
     return if Rails.application.secrets.permitted_ips.blank?
-    return if Rails.application.secrets.permitted_ips
-                   .split(',').include? request.ip
+    return if Rails.application.secrets.permitted_ips.split( /[, ]/ ).include? request.ip
 
-    render text: 'Access Denied', status: :unauthorized
+    render plain: 'Access Denied', status: :unauthorized
   end
 
   def authenticate
