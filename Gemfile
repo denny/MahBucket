@@ -60,6 +60,6 @@ source 'https://rubygems.org' do
     gem 'codecov', require: false
     gem 'database_cleaner'
     gem 'selenium-webdriver'
-    gem 'webdrivers', '~> 4.3'
+    gem 'webdrivers', '~> 4.4'
   end
 end
