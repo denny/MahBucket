@@ -37,6 +37,19 @@ RSpec.describe 'Create/Update/Delete items', type: :request do
       expect( response ).to have_http_status :ok
       expect( response.body ).to have_text 'Item was created.'
     end
+
+    it 'throws an error if you upload a duplicate file' do
+      post '/items', params: {
+        'item[item_file]': fixture_file_upload( 'spec/fixtures/mah-bucket.jpg' )
+      }
+      get '/'
+      post '/items', params: {
+        'item[item_file]': fixture_file_upload( 'spec/fixtures/mah-bucket.jpg' )
+      }
+
+      expect( response ).to have_http_status :ok
+      expect( response.body ).to have_text 'This file has already been uploaded'
+    end
   end
 
   describe 'PUT /items/1' do
