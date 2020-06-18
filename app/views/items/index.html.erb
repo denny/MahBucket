@@ -1,10 +1,4 @@
-<% if @items.blank? %>
-
-<p>
-    You have not added any items yet.
-</p>
-
-<% else %>
+<% if @items.present? %>
 
 <% @items.each do |item| %>
 <%= render partial: 'item', locals: { item: item } %>
@@ -13,6 +7,12 @@
 <div style="clear: both;"></div>
 
 <%= paginate @items %>
+
+<% else %>
+
+<p>
+    You have not added any items yet.
+</p>
 
 <% end %>
 

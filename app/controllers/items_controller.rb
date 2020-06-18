@@ -17,9 +17,6 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
-  # GET /items/1/edit
-  def edit; end
-
   # POST /items
   # POST /items.json
   def create
@@ -35,6 +32,9 @@ class ItemsController < ApplicationController
       end
     end
   end
+
+  # GET /items/1/edit
+  def edit; end
 
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
@@ -55,7 +55,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was destroyed.' }
+      format.html { redirect_to items_url, notice: 'Item was deleted.' }
       format.json { head :no_content }
     end
   end

@@ -1,21 +1,30 @@
 # README
 
-Mah Bucket is a file library with tagging, which uses Amazon S3 for storage.
+Mah Bucket is a simple file library with search and tagging, which uses Amazon
+S3 for storage.
 
 It has primarily been developed for storing and organising image files, but
 should hopefully be useful (or at least usable) for other file types too.
 
 
-## Ruby version
+## Ruby and Rails versions
 
-  Mah Bucket was developed using Ruby 2.3.1 and 2.3.3, but will very probably
-  work with earlier and later versions too.  If you find a version it won't run
-  with, please let me know (by email, or by providing a patch to this README
-  file).
+Mah Bucket was initially developed using Ruby 2.3.1 and Rails 5.0.1, and is
+currently using Ruby 2.7.1 and Rails 6.0.3 - so it should have a fairly wide
+compatibility range. If you find a version of either that it won't run with,
+please let me know.
 
 
 ## System dependencies
 
+The paperclip gem requires ImageMagick to be installed.
+
+
+## Services
+
+Mah Bucket uses Amazon S3 for file storage, Google OAuth for authentication,
+and was developed using Postgres for data storage - although any database
+supported by ActiveRecord should work.
 
 
 ## Configuration
@@ -39,51 +48,31 @@ the following command: export $(cat .env | grep -v ^# | xargs)
 
 ## Database creation
 
-```
-rake db:migrate
-```
+`rails db:setup`
 
-## Database initialization
-
-```
-psql
-create database mahbucket;
-```
 
 ## How to run the test suite
 
-
-```
-rspec
-```
-
-
-## Services
-
-Mah Bucket uses Amazon S3 for file storage, Amazon RDS for data storage, 
-and Google OAuth for authentication.
-
-
-## Deployment instructions
+`rspec`
 
 
 ## Author
 
-Mah Bucket was written by Denny de la Haye <2018@denny.me>
+Mah Bucket was written by Denny de la Haye <2020@denny.me>
 
 
 ## Copyright
 
-(c) 2017-2018 Denny de la Haye
+(c) 2017-2020 Denny de la Haye
 
 
 ## Credits
 
-Initial development was largely paid for by 38 Degrees (38degrees.org.uk)
+Initial development was largely paid for by [38 Degrees](https://38degrees.org.uk)
 
-Initial development was greatly assisted by Eliot Sykes (eliotsykes.com)
+Initial development was greatly assisted by [Eliot Sykes](https://eliotsykes.com)
 
 
 ## Current Status
 
-[![CircleCI](https://circleci.com/gh/denny/MahBucket.svg?style=svg)](https://circleci.com/gh/denny/MahBucket) (CircleCI)  [![Travis CI](https://travis-ci.org/denny/MahBucket.svg?branch=master)](https://travis-ci.org/denny/MahBucket) (Travis CI)  [![codecov](https://codecov.io/gh/denny/MahBucket/branch/master/graph/badge.svg)](https://codecov.io/gh/denny/MahBucket) (CodeCov)  [![CodeClimate](https://api.codeclimate.com/v1/badges/7bc3b576f0265db7b8f8/maintainability)](https://codeclimate.com/github/denny/MahBucket/maintainability) (Code Climate)
+[![CircleCI](https://circleci.com/gh/denny/MahBucket.svg?style=svg)](https://circleci.com/gh/denny/MahBucket)  [![Travis CI](https://travis-ci.org/denny/MahBucket.svg?branch=master)](https://travis-ci.org/denny/MahBucket)  [![codecov](https://codecov.io/gh/denny/MahBucket/branch/master/graph/badge.svg)](https://codecov.io/gh/denny/MahBucket)  [![CodeClimate](https://api.codeclimate.com/v1/badges/7bc3b576f0265db7b8f8/maintainability)](https://codeclimate.com/github/denny/MahBucket/maintainability)
