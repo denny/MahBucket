@@ -70,9 +70,9 @@ Initial development was greatly assisted by [Eliot Sykes](https://eliotsykes.com
 
 ## Licensing
 
-Mah Bucket is free software; you can redistribute it and/or modify it
-under the terms of the GPL (version 2 or later). There are copies of
-v2 and v3 of the GPL in [docs/Licensing], or you can read them online:  
+Mah Bucket is free software; you can redistribute it and/or modify it under
+the terms of the GPL (version 2 or later). There are copies of v2 and v3 of
+the GPL in [docs/Licensing](docs/Licensing), or you can read them online:  
 https://opensource.org/licenses/gpl-2.0  
 https://opensource.org/licenses/gpl-3.0
 
