@@ -79,4 +79,4 @@ https://opensource.org/licenses/gpl-3.0
 
 ## Current Status
 
-[![CircleCI](https://circleci.com/gh/denny/MahBucket.svg?style=svg)](https://circleci.com/gh/denny/MahBucket)  [![Travis CI](https://travis-ci.org/denny/MahBucket.svg?branch=master)](https://travis-ci.org/denny/MahBucket)  [![codecov](https://codecov.io/gh/denny/MahBucket/branch/master/graph/badge.svg)](https://codecov.io/gh/denny/MahBucket)  [![CodeClimate](https://api.codeclimate.com/v1/badges/7bc3b576f0265db7b8f8/maintainability)](https://codeclimate.com/github/denny/MahBucket/maintainability)
+[![CircleCI](https://circleci.com/gh/denny/MahBucket.svg?style=svg)](https://circleci.com/gh/denny/MahBucket)  [![Travis CI](https://travis-ci.org/denny/MahBucket.svg?branch=main)](https://travis-ci.org/denny/MahBucket)  [![codecov](https://codecov.io/gh/denny/MahBucket/branch/main/graph/badge.svg)](https://codecov.io/gh/denny/MahBucket)  [![CodeClimate](https://api.codeclimate.com/v1/badges/7bc3b576f0265db7b8f8/maintainability)](https://codeclimate.com/github/denny/MahBucket/maintainability)
