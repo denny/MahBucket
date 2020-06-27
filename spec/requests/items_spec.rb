@@ -28,7 +28,7 @@ RSpec.describe 'Create/Update/Delete items', type: :request do
   describe 'POST /items' do
     it 'successfully submits the form for adding a new item' do
       post '/items', params: {
-        'item[item_file]': fixture_file_upload( 'spec/fixtures/mah-bucket.jpg' )
+        'item[file]': fixture_file_upload( 'spec/fixtures/mah-bucket.jpg' )
       }
 
       expect( response ).to have_http_status :found
@@ -37,6 +37,19 @@ RSpec.describe 'Create/Update/Delete items', type: :request do
       expect( response ).to have_http_status :ok
       expect( response.body ).to have_text 'Item was created.'
     end
+
+    it 'throws an error if you upload a duplicate file' do
+      post '/items', params: {
+        'item[file]': fixture_file_upload( 'spec/fixtures/mah-bucket.jpg' )
+      }
+      get '/'
+      post '/items', params: {
+        'item[file]': fixture_file_upload( 'spec/fixtures/mah-bucket.jpg' )
+      }
+
+      expect( response ).to have_http_status :ok
+      expect( response.body ).to have_text 'This file has already been uploaded'
+    end
   end
 
   describe 'PUT /items/1' do
@@ -44,7 +57,7 @@ RSpec.describe 'Create/Update/Delete items', type: :request do
       item = Item.create!( file: File.new( Rails.root + 'spec/fixtures/test.txt' ) )
 
       put "/items/#{item.id}", params: {
-        'item[item_file]': fixture_file_upload( 'spec/fixtures/mah-bucket.jpg' )
+        'item[file]': fixture_file_upload( 'spec/fixtures/mah-bucket.jpg' )
       }
 
       expect( response ).to have_http_status :found
@@ -52,6 +65,26 @@ RSpec.describe 'Create/Update/Delete items', type: :request do
       follow_redirect!
       expect( response ).to have_http_status :ok
       expect( response.body ).to have_text 'Item was updated.'
+    end
+
+    it 'catches duplicate images at update stage' do
+      post '/items', params: {
+        'item[file]': fixture_file_upload( 'spec/fixtures/mah-bucket.jpg' )
+      }
+      get '/'
+      post '/items', params: {
+        'item[file]': fixture_file_upload( 'spec/fixtures/test.txt' )
+      }
+      get '/'
+
+      item = Item.last
+
+      put "/items/#{item.id}", params: {
+        'item[file]': fixture_file_upload( 'spec/fixtures/mah-bucket.jpg' )
+      }
+
+      expect( response ).to have_http_status :ok
+      expect( response.body ).to have_text 'This file has already been uploaded'
     end
   end
 
