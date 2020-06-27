@@ -58,21 +58,25 @@ the following command: export $(cat .env | grep -v ^# | xargs)
 
 ## Author
 
-Mah Bucket was written by Denny de la Haye <2020@denny.me>
 
+## Copyright and Credits
 
-## Copyright
-
-(c) 2017-2020 Denny de la Haye
-
-
-## Credits
+Mah Bucket is copyright (c) 2017-2020 Denny de la Haye - https://denny.me
 
 Initial development was largely paid for by [38 Degrees](https://38degrees.org.uk)
 
 Initial development was greatly assisted by [Eliot Sykes](https://eliotsykes.com)
 
 
+## Licensing
+
+Mah Bucket is free software; you can redistribute it and/or modify it under
+the terms of the GPL (version 2 or later). There are copies of v2 and v3 of
+the GPL in [docs/Licensing](docs/Licensing), or you can read them online:  
+https://opensource.org/licenses/gpl-2.0  
+https://opensource.org/licenses/gpl-3.0
+
+
 ## Current Status
 
-[![CircleCI](https://circleci.com/gh/denny/MahBucket.svg?style=svg)](https://circleci.com/gh/denny/MahBucket)  [![Travis CI](https://travis-ci.org/denny/MahBucket.svg?branch=master)](https://travis-ci.org/denny/MahBucket)  [![codecov](https://codecov.io/gh/denny/MahBucket/branch/master/graph/badge.svg)](https://codecov.io/gh/denny/MahBucket)  [![CodeClimate](https://api.codeclimate.com/v1/badges/7bc3b576f0265db7b8f8/maintainability)](https://codeclimate.com/github/denny/MahBucket/maintainability)
+[![CircleCI](https://circleci.com/gh/denny/MahBucket.svg?style=svg)](https://circleci.com/gh/denny/MahBucket)  [![Travis CI](https://travis-ci.org/denny/MahBucket.svg?branch=main)](https://travis-ci.org/denny/MahBucket)  [![codecov](https://codecov.io/gh/denny/MahBucket/branch/main/graph/badge.svg)](https://codecov.io/gh/denny/MahBucket)  [![CodeClimate](https://api.codeclimate.com/v1/badges/7bc3b576f0265db7b8f8/maintainability)](https://codeclimate.com/github/denny/MahBucket/maintainability)
