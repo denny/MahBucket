@@ -18,10 +18,6 @@ source 'https://rubygems.org' do
   gem 'turbolinks', '~> 5'
   # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
   gem 'jbuilder', '~> 2.10'
-  # Use Redis adapter to run Action Cable in production
-  # gem 'redis', '~> 3.0'
-  # Use ActiveModel has_secure_password
-  # gem 'bcrypt', '~> 3.1.7'
 
   # Authenticate via Google OAuth
   gem 'omniauth', '~> 1.9.1'
@@ -31,6 +27,9 @@ source 'https://rubygems.org' do
   gem 'aws-sdk-s3'
   gem 'paperclip', '~> 6.1.0'
   gem 'paperclip-meta'
+
+  # Image manipulation
+  gem 'mini_magick'
 
   # Add tag features
   gem 'acts-as-taggable-on'
