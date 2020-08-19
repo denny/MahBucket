@@ -14,8 +14,8 @@ RSpec.feature "User views items", type: :feature, js: true do
   end
 
   scenario 'sees newly-added items' do
-    Item.create!( file: File.new( Rails.root + 'spec/fixtures/mah-bucket.jpg' ) )
-    Item.create!( file: File.new( Rails.root + 'spec/fixtures/test.txt' ) )
+    Item.create!( file: File.new( Rails.root.join( 'spec/fixtures/mah-bucket.jpg' ) ) )
+    Item.create!( file: File.new( Rails.root.join( 'spec/fixtures/test.txt'       ) ) )
 
     visit '/'
 
