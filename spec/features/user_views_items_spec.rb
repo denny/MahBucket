@@ -24,7 +24,7 @@ RSpec.feature "User views items", type: :feature, js: true do
   end
 
   scenario 'but is foiled by IP restriction' do
-    allow( Rails.application.secrets ).to receive( :permitted_ips ).and_return( 'FAIL' )
+    allow( ApplicationController ).to receive( :permitted_ips ).and_return( 'FAIL' )
 
     visit '/'
 
