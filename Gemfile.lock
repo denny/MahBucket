@@ -92,7 +92,7 @@ GEM
     childprocess (3.0.0)
     choice (0.2.0)
     climate_control (0.2.0)
-    codecov (0.2.5)
+    codecov (0.2.6)
       colorize
       json
       simplecov
@@ -292,7 +292,7 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    simplecov (0.18.5)
+    simplecov (0.19.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
     simplecov-html (0.12.2)
