@@ -40,5 +40,9 @@ jobs:
           command: |
             bundle exec rake db:create db:schema:load
 
+      - run:
+          name: Brakeman
+          command: bundle exec brakeman
+
       - ruby/rubocop-check
       - ruby/rspec-test

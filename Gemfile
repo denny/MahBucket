@@ -43,6 +43,7 @@ source 'https://rubygems.org' do
 
   group :development, :test do
     # Audit gems for security vulnerabilities
+    gem 'brakeman'
     gem 'bundler-audit', require: false
     gem 'capybara'
     gem 'pry-rails'
