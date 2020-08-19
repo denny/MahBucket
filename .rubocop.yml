@@ -26,11 +26,10 @@ Metrics/BlockLength:
     - config/environments/*
     - lib/tasks/*.rake
 
-# Also, spec files with I18n strings in them are more readable with slightly
-# long lines than they would be with lots of split lines. Again, shush.
-# Layout/LineLength:
-#  Exclude:
-#    - spec/**/*.rb
+# This set of tests use IP addresses for good reasons
+Style/IpAddresses:
+  Exclude:
+    - spec/features/ip_restrictions_spec.rb
 
 # Whitespace Considered Helpful
 Layout/ExtraSpacing:
