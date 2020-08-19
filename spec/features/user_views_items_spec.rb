@@ -22,12 +22,4 @@ RSpec.feature "User views items", type: :feature, js: true do
     expect( page ).to have_link 'mah-bucket.jpg'
     expect( page ).to have_link 'test.txt'
   end
-
-  scenario 'but is foiled by IP restriction' do
-    allow( Rails.application.secrets ).to receive( :permitted_ips ).and_return( 'FAIL' )
-
-    visit '/'
-
-    expect( page ).to have_text 'Access Denied'
-  end
 end
