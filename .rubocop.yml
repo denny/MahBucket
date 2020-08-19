@@ -19,6 +19,7 @@ AllCops:
     - public/**/*
     - tmp/**/*
     - tools/**/*
+    - '**/vendor/**/*' # since we `bundle install --path vendor/bundle` on CI
 
 # Spec files and the routes file are supposed to be one long block. Shush.
 Metrics/BlockLength:
