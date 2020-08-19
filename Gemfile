@@ -43,6 +43,7 @@ source 'https://rubygems.org' do
 
   group :development, :test do
     # Audit gems for security vulnerabilities
+    gem 'brakeman'
     gem 'bundler-audit', require: false
     gem 'capybara'
     gem 'pry-rails'
@@ -53,12 +54,17 @@ source 'https://rubygems.org' do
     gem 'listen', '~> 3.2.1'
     gem 'rails-erd'
     gem 'rubocop', require: false
+    gem 'rubocop-performance', require: false
     gem 'rubocop-rails', require: false
+    gem 'rubocop-rspec', require: false
+
   end
 
   group :test do
     gem 'codecov', require: false
     gem 'database_cleaner'
+    gem 'rspec'
+    gem 'rspec_junit_formatter'
     gem 'selenium-webdriver'
     gem 'webdrivers', '~> 4.4'
   end

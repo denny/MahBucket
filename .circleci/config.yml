@@ -2,7 +2,9 @@
 #
 # Check https://circleci.com/docs/2.0/language-ruby for more details
 
-version: 2
+version: 2.1
+orbs:
+  ruby: circleci/ruby@1.1.1
 jobs:
   build:
     docker:
@@ -22,16 +24,7 @@ jobs:
 
     steps:
       - checkout
-
-      - restore_cache:
-          keys:
-          - bundle-cache-{{ checksum "Gemfile.lock" }}
-          - bundle-cache-
-
-      - run:
-          name: install dependencies
-          command: |
-            bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - ruby/install-deps
 
       - run:
           name: Install Chromedriver latest version
@@ -42,26 +35,14 @@ jobs:
             sudo dpkg -i google-chrome.deb
             sudo sed -i 's|HERE/chrome"|HERE/chrome" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome
 
-      - save_cache:
-          paths:
-            - ./vendor/bundle
-          key: bundle-cache-{{ checksum "Gemfile.lock" }}
-
       - run:
           name: Set up database
           command: |
             bundle exec rake db:create db:schema:load
 
       - run:
-          name: Run tests
-          command: |
-            mkdir /tmp/test-results
-            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
-            bundle exec rspec
+          name: Brakeman
+          command: bundle exec brakeman
 
-      - store_test_results:
-          path: /tmp/test-results
-
-      - store_artifacts:
-          path: /tmp/test-results
-          destination: test-results
+      - ruby/rubocop-check
+      - ruby/rspec-test
