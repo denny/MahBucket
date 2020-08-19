@@ -1,19 +1,19 @@
 require 'rails_helper'
 
-RSpec.feature "User views items", type: :feature, js: true do
-  scenario 'successfully' do
+RSpec.describe "User views items", type: :feature, js: true do
+  it 'successfully' do
     visit '/'
 
     expect( page ).to have_css 'a[href="/search"]'
   end
 
-  scenario 'sees "no items yet" notice' do
+  it 'sees "no items yet" notice' do
     visit '/'
 
     expect( page ).to have_text 'You have not added any items yet'
   end
 
-  scenario 'sees newly-added items' do
+  it 'sees newly-added items' do
     Item.create!( file: File.new( Rails.root + 'spec/fixtures/mah-bucket.jpg' ) )
     Item.create!( file: File.new( Rails.root + 'spec/fixtures/test.txt' ) )
 
@@ -23,7 +23,7 @@ RSpec.feature "User views items", type: :feature, js: true do
     expect( page ).to have_link 'test.txt'
   end
 
-  scenario 'but is foiled by IP restriction' do
+  it 'but is foiled by IP restriction' do
     allow( Rails.application.secrets ).to receive( :permitted_ips ).and_return( 'FAIL' )
 
     visit '/'

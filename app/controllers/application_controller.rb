@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate
     return if session[:email]
-    return if request.path =~ /google_oauth2/
+    return if /google_oauth2/.match?(request.path)
 
     redirect_to '/auth/google_oauth2'
   end
