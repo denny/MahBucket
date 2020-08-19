@@ -63,6 +63,8 @@ source 'https://rubygems.org' do
   group :test do
     gem 'codecov', require: false
     gem 'database_cleaner'
+    gem 'rspec'
+    gem 'rspec_junit_formatter'
     gem 'selenium-webdriver'
     gem 'webdrivers', '~> 4.4'
   end
