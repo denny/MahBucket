@@ -1,4 +1,7 @@
-require: rubocop-rails
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
 
 # Rails and ActiveRecord autogenerate a lot of code that fails Rubocop
 # (I find this mildly confusing/annoying). Also, there's no point in
@@ -16,6 +19,7 @@ AllCops:
     - public/**/*
     - tmp/**/*
     - tools/**/*
+    - '**/vendor/**/*' # since we `bundle install --path vendor/bundle` on CI
 
 # Spec files and the routes file are supposed to be one long block. Shush.
 Metrics/BlockLength:
@@ -129,3 +133,13 @@ Rails/SaveBang:
   Enabled: false
 Rails/Validation:
   Enabled: false
+
+RSpec/ExampleLength:
+  Max: 15
+
+RSpec/MultipleExpectations:
+  Max: 5
+
+RSpec/AnyInstance:
+  Exclude:
+    - 'spec/requests/items_spec.rb'

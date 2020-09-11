@@ -1,19 +1,19 @@
 require 'rails_helper'
 
-RSpec.feature "User views items", type: :feature, js: true do
-  scenario 'successfully' do
+RSpec.describe "User views items", type: :feature, js: true do
+  it 'successfully' do
     visit '/'
 
     expect( page ).to have_css 'a[href="/search"]'
   end
 
-  scenario 'sees "no items yet" notice' do
+  it 'sees "no items yet" notice' do
     visit '/'
 
     expect( page ).to have_text 'You have not added any items yet'
   end
 
-  scenario 'sees newly-added items' do
+  it 'sees newly-added items' do
     Item.create!( file: File.new( Rails.root.join( 'spec/fixtures/mah-bucket.jpg' ) ) )
     Item.create!( file: File.new( Rails.root.join( 'spec/fixtures/test.txt'       ) ) )
 
