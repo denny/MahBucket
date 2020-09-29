@@ -162,7 +162,7 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.1.1)
     newrelic_rpm (6.12.0.367)
-    nio4r (2.5.3)
+    nio4r (2.5.4)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     oauth2 (1.4.4)
@@ -199,7 +199,7 @@ GEM
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     public_suffix (4.0.5)
-    puma (4.3.6)
+    puma (5.0.2)
       nio4r (~> 2.0)
     rack (2.2.3)
     rack-test (1.1.0)
@@ -359,7 +359,7 @@ DEPENDENCIES
   paperclip-meta!
   pg!
   pry-rails!
-  puma (~> 4.3)!
+  puma (~> 5.0)!
   rails (~> 6.0.3)!
   rails-erd!
   rspec!
