@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.feature "User authentication", type: :feature, js: false do
-    scenario 'succeeds' do
+RSpec.describe "User authentication", type: :feature, js: false do
+    it 'succeeds' do
         visit '/'
         expect( page ).to have_http_status :ok
     end
     
-    scenario 'fails for user not in authorised domain' do
+    it 'fails for user not in authorised domain' do
         original_user = OmniAuth.config.mock_auth[:google_oauth2]
         OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
           :provider => 'google_oauth2',

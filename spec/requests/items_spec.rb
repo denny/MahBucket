@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Create/Update/Delete items', type: :request do
-  before :each do
-    allow_any_instance_of( ItemsController ).to receive( :authenticate ) {}
+  before do
+    allow_any_instance_of( ItemsController ).to receive( :authenticate ).and_return(nil)
   end
 
   describe 'GET /items/new' do
@@ -16,7 +16,7 @@ RSpec.describe 'Create/Update/Delete items', type: :request do
 
   describe 'GET /items/1/edit' do
     it 'shows the form for adding a new item' do
-      item = Item.create!( file: File.new( Rails.root + 'spec/fixtures/mah-bucket.jpg' ) )
+      item = Item.create!( file: File.new( Rails.root.join( 'spec/fixtures/mah-bucket.jpg' ) ) )
 
       get "/items/#{item.id}/edit"
 
@@ -54,7 +54,7 @@ RSpec.describe 'Create/Update/Delete items', type: :request do
 
   describe 'PUT /items/1' do
     it 'successfully submits the form for updating an item' do
-      item = Item.create!( file: File.new( Rails.root + 'spec/fixtures/test.txt' ) )
+      item = Item.create!( file: File.new( Rails.root.join( 'spec/fixtures/test.txt' ) ) )
 
       put "/items/#{item.id}", params: {
         'item[file]': fixture_file_upload( 'spec/fixtures/mah-bucket.jpg' )
@@ -90,7 +90,7 @@ RSpec.describe 'Create/Update/Delete items', type: :request do
 
   describe 'DELETE /items/1' do
     it 'deletes an item' do
-      item = Item.create!( file: File.new( Rails.root + 'spec/fixtures/test.txt' ) )
+      item = Item.create!( file: File.new( Rails.root.join( 'spec/fixtures/test.txt' ) ) )
 
       delete "/items/#{item.id}"
 
