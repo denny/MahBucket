@@ -51,6 +51,10 @@ Layout/SpaceInsidePercentLiteralDelimiters:
 Layout/SpaceInsideReferenceBrackets:
   Enabled: false
 
+# Whut? No.
+Layout/SpaceBeforeBrackets:
+  Enabled: false
+
 # I'd rather use one style of regex everywhere, that is clearer for munging URLs
 # as no need to escape '/': %r{/(path)/parts/} rather than /\/(path)\/parts\//
 # Style/RegexpLiteral:
