@@ -362,6 +362,7 @@ DEPENDENCIES
   kaminari!
   listen (~> 3.2.1)!
   newrelic_rpm!
+  nokogiri (>= 1.11.0.rc4)!
   omniauth (~> 1.9.1)!
   omniauth-google-oauth2!
   paperclip (~> 6.1.0)!
