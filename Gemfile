@@ -41,6 +41,9 @@ source 'https://rubygems.org' do
   # New Relic monitoring
   gem 'newrelic_rpm'
 
+  # https://github.com/advisories/GHSA-vr8q-g5c7-m54m
+  gem "nokogiri", ">= 1.11.0.rc4"
+
   group :development, :test do
     # Audit gems for security vulnerabilities
     gem 'brakeman'
