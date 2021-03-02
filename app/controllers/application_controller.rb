@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
   end
 
   def handle_ip_list_with_comments( permitted_ips )
-    permitted_ips_lines = permitted_ips.split( /\n/ )
+    permitted_ips_lines = permitted_ips.split( "\n" )
 
     ip_addresses = []
     permitted_ips_lines.each do |line|
