@@ -355,8 +355,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionpack (>= 6.0.3.5)!
-  activerecord (>= 6.0.3.5)!
   acts-as-taggable-on!
   aws-sdk-s3!
   brakeman!
