@@ -26,6 +26,7 @@ source 'https://rubygems.org' do
   # Authenticate via Google OAuth
   gem 'omniauth', '~> 1.9.1'
   gem 'omniauth-google-oauth2'
+  gem 'repost'
 
   # Store files on Amazon S3
   gem 'aws-sdk-s3'
