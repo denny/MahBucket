@@ -3,29 +3,26 @@ source 'https://rubygems.org' do
 
   # Use postgres as the database for Active Record
   gem 'pg'
+
   # Use Puma as the app server
   gem 'puma', '~> 5.0'
-  # Use SCSS for stylesheets
-  gem 'sass-rails', '~> 6.0'
-  # Use Uglifier as compressor for JavaScript assets
-  gem 'uglifier', '>= 1.3.0'
-  # Use CoffeeScript for .coffee assets and views
-  gem 'coffee-rails', '~> 5.0'
 
   # Use jquery as the JavaScript library
   gem 'jquery-rails'
-  # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+  # Use Uglifier as compressor for JavaScript assets
+  gem 'uglifier', '>= 1.3.0'
+  # Use SCSS for stylesheets
+  gem 'sass-rails', '~> 6.0'
+# Use CoffeeScript for .coffee assets and views
+  gem 'coffee-rails', '~> 5.0'
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
   gem 'turbolinks', '~> 5'
-  # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-  gem 'jbuilder', '~> 2.10'
-  # Use Redis adapter to run Action Cable in production
-  # gem 'redis', '~> 3.0'
-  # Use ActiveModel has_secure_password
-  # gem 'bcrypt', '~> 3.1.7'
 
   # Authenticate via Google OAuth
-  gem 'omniauth', '~> 1.9.1'
+  gem 'omniauth', '~> 2.0'
   gem 'omniauth-google-oauth2'
+  gem 'omniauth-rails_csrf_protection', '~> 1.0'
+  gem 'repost'
 
   # Store files on Amazon S3
   gem 'aws-sdk-s3'
@@ -46,29 +43,34 @@ source 'https://rubygems.org' do
 
   group :development, :test do
     # Audit gems for security vulnerabilities
-    gem 'brakeman'
+    gem 'brakeman', require: false
     gem 'bundler-audit', require: false
-    gem 'capybara'
+
     gem 'pry-rails'
-    gem 'rspec-rails', '~> 4.0'
   end
 
   group :development do
-    gem 'listen', '~> 3.2.1'
-    gem 'rails-erd'
     gem 'rubocop', require: false
     gem 'rubocop-performance', require: false
     gem 'rubocop-rails', require: false
     gem 'rubocop-rspec', require: false
 
+    gem 'listen', '~> 3.2.1'
+
+    gem 'rails-erd', require: false
   end
 
   group :test do
-    gem 'codecov', require: false
-    gem 'database_cleaner'
     gem 'rspec'
-    gem 'rspec_junit_formatter'
+    gem 'rspec-rails', '~> 4.0'
+
+    gem 'database_cleaner'
+
+    gem 'capybara'
     gem 'selenium-webdriver'
     gem 'webdrivers', '~> 4.4'
+
+    gem 'codecov', require: false
+    gem 'rspec_junit_formatter'
   end
 end
