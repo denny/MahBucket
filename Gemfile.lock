@@ -261,6 +261,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.1.1)
+    repost (0.3.6)
     rexml (3.2.5)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
@@ -388,6 +389,7 @@ DEPENDENCIES
   puma (~> 5.0)!
   rails (~> 6.0.3)!
   rails-erd!
+  repost!
   rspec!
   rspec-rails (~> 4.0)!
   rspec_junit_formatter!

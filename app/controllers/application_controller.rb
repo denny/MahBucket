@@ -48,6 +48,6 @@ class ApplicationController < ActionController::Base
     return if session[:email]
     return if /google_oauth2/.match?(request.path)
 
-    redirect_to '/auth/google_oauth2'
+    redirect_post '/auth/google_oauth2'
   end
 end
