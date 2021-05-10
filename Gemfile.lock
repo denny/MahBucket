@@ -180,6 +180,8 @@ GEM
     nokogiri (1.11.3)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
+    nokogiri (1.11.3-x86_64-linux)
+      racc (~> 1.4)
     oauth2 (1.4.7)
       faraday (>= 0.8, < 2.0)
       jwt (>= 1.0, < 3.0)
@@ -258,6 +260,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.1.1)
+    repost (0.3.6)
     rexml (3.2.5)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
@@ -360,6 +363,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-linux
 
 DEPENDENCIES
   acts-as-taggable-on!
@@ -385,6 +389,7 @@ DEPENDENCIES
   puma (~> 5.0)!
   rails (~> 6.0.3)!
   rails-erd!
+  repost!
   rspec!
   rspec-rails (~> 4.0)!
   rspec_junit_formatter!
