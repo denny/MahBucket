@@ -35,8 +35,18 @@ Style/IpAddresses:
   Exclude:
     - spec/features/ip_restrictions_spec.rb
 
+# This might be worth enabling at some point?
+Bundler/GemVersion:
+  Enabled: false
+
+# Allow read access to ENV
+Rails/EnvironmentVariableAccess:
+  AllowReads: true
+
 # Whitespace Considered Helpful
 Layout/ExtraSpacing:
+  Enabled: false
+Layout/RedundantLineBreak:
   Enabled: false
 Layout/SpaceInsideArrayLiteralBrackets:
   Enabled: false
