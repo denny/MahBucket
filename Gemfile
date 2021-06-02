@@ -1,3 +1,5 @@
+ruby "2.7.3"
+
 source 'https://rubygems.org' do
   gem 'rails', '~> 6.0.3'
 
