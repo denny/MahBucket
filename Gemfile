@@ -42,6 +42,10 @@ source 'https://rubygems.org' do
   # New Relic monitoring
   gem 'newrelic_rpm'
 
+  # Error reporting
+  gem 'sentry-rails'
+  gem 'sentry-ruby'
+
   # https://github.com/advisories/GHSA-vr8q-g5c7-m54m
   gem "nokogiri", ">= 1.11.0.rc4"
 
