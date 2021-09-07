@@ -19,11 +19,7 @@ class ApplicationController < ActionController::Base
     return if Rails.env.development?
     return if self.class.permitted_ips_from_env.blank?
 
-    if !self.class.client_ip_header_from_env
-      ip_to_verify = request.ip
-    else
-      ip_to_verify = request.headers[self.class.client_ip_header_from_env]
-    end
+    ip_to_verify = self.class.client_ip_header_from_env ? request.headers[self.class.client_ip_header_from_env] : request.ip
 
     Rails.logger.debug("check_permitted_ips: checking ip: #{ip_to_verify}")
     
