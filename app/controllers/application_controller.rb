@@ -9,14 +9,26 @@ class ApplicationController < ActionController::Base
     ENV['PERMITTED_IPS']
   end
 
+  def self.client_ip_header_from_env
+    ENV['CLIENT_IP_HEADER']
+  end
+  
   private
 
   def check_permitted_ips
     return if Rails.env.development?
     return if self.class.permitted_ips_from_env.blank?
 
+    if !self.class.client_ip_header_from_env
+      ip_to_verify = request.ip
+    else
+      ip_to_verify = request.headers[self.class.client_ip_header_from_env]
+    end
+
+    Rails.logger.debug("check_permitted_ips: checking ip: #{ip_to_verify}")
+    
     ip_addresses = list_of_permitted_ips( self.class.permitted_ips_from_env )
-    return if ip_addresses.include? request.ip
+    return if ip_addresses.include? ip_to_verify
 
     render plain: 'Access Denied', status: :unauthorized
   end

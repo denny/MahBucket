@@ -43,4 +43,13 @@ RSpec.describe "User attempts to view items", type: :feature, js: true do
 
     expect( page ).to have_text 'Access Denied'
   end
+
+  it 'Disallows a non matching ip in a different header with basic permitted-IPs list' do
+    allow( ApplicationController ).to receive( :client_ip_header_from_env ).and_return('CF-Connecting-Ip')
+    allow( ApplicationController ).to receive( :permitted_ips_from_env ).and_return( '' )
+
+    visit '/'
+
+    expect( page ).to have_text 'Access Denied'
+  end
 end
