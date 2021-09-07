@@ -48,7 +48,7 @@ RSpec.describe "User attempts to view items", type: :feature, js: true do
     allow( ApplicationController ).to receive( :client_ip_header_from_env ).and_return('CF-Connecting-Ip')
     allow( ApplicationController ).to receive( :permitted_ips_from_env ).and_return( '' )
 
-    page.set_headers("CF-Connecting-Ip" => '127.0.0.1')
+    Capybara.current_session.driver.header('CF-Connecting-Ip', '127.0.0.1')
     visit '/'
 
     expect( page ).to have_text 'Access Denied'
@@ -58,7 +58,7 @@ RSpec.describe "User attempts to view items", type: :feature, js: true do
     allow( ApplicationController ).to receive( :client_ip_header_from_env ).and_return('CF-Connecting-Ip')
     allow( ApplicationController ).to receive( :permitted_ips_from_env ).and_return( '127.0.0.1' )
 
-    page.set_headers("CF-Connecting-Ip" => '127.0.0.1')
+    Capybara.current_session.driver.header('CF-Connecting-Ip', '127.0.0.1')
     visit '/'
 
     expect( page ).to have_css 'a[href="/search"]'
