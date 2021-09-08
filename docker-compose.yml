@@ -1,0 +1,58 @@
+version: '3'
+
+x-service-fragments:
+  ##### Abstract services for common setup #####
+  app: &app
+    image: ruby
+    networks:
+      - default
+    volumes:
+      # Use cached bind mount for mac performance
+      - '.:/app:cached'
+      # use separate volume for gems and node packages to make development nicer
+      - bundle_cache:/bundle
+      - node_cache:/app/node_modules
+      - webdriver_cache:/root/.webdrivers
+      # use separate volume for bootsnap cache for performance...
+      - tmp_cache:/app/tmp/cache
+
+services:
+  ##### Concrete services #####
+  postgres:
+    image: 'postgres:9.6-alpine'
+    environment:
+      # The Postgres image uses these to create a db user - note the user/pass here should match that in your env file!
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=mahbucket_test
+    volumes:
+      - 'postgres:/var/lib/postgresql/data'
+
+  web:
+    <<: *app
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      # Use a default port of 3005, but allow it to be overriden by an env variable
+      # E.g. `PORT=3001 docker-compose up`
+      - '${PORT:-3005}:3000'
+    stdin_open: true
+    tty: true
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_URL=postgres://user:password@postgres/mahbucket
+      - RACK_ENV=test
+      - RAILS_ENV=test
+      - DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL=true
+    command: sh -c 'bundle check || bundle install && bundle exec rails webdrivers:chromedriver:update db:create  db:environment:set db:schema:load && bundle exec rubocop && bundle exec rspec && puma -C ./config/puma.rb'
+
+    
+volumes:
+  postgres:
+  bundle_cache:
+  node_cache:
+  tmp_cache:
+  webdriver_cache:
+
