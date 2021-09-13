@@ -1,6 +1,4 @@
-# This Dockerfile is intended for local development. Since many (most) orgs using speakout have a deployment
-# target of Heroku, this Dockerfile uses a Heroku image as a base. At the time of writing, the latest Heroku stack
-# is Heroku-20
+# This Dockerfile uses a circleci image for convenience.
 
 FROM circleci/ruby:2.7.3-node-browsers
 
@@ -12,7 +10,7 @@ WORKDIR /app
 # dependencies (via bundle and yarn), and the mounting of the source
 # code external to the container build
 #ENV PATH="/usr/local/lib/ruby/gems/bin:${PATH}"
-RUN sudo mkdir /bundle
+RUN mkdir /bundle
 ENV BUNDLE_PATH=/bundle
 ENV GEM_HOME=/bundle
 RUN bundle config set path '/bundle'
