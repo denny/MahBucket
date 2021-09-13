@@ -14,6 +14,16 @@ currently using Ruby 2.7.1 and Rails 6.0.3 - so it should have a fairly wide
 compatibility range. If you find a version of either that it won't run with,
 please let me know.
 
+## Running locally
+If you are docker enabled then there is a very simple docker compose
+setup that when run will run rubocop, rspecs and if successful launch
+the app.
+
+Run with
+```
+docker compose up
+```
+
 
 ## System dependencies
 

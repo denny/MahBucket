@@ -53,6 +53,10 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate
+    if Rails.env.test? && ENV['SKIP_AUTH']
+      session[:email] = 'admin@example.com'
+      return
+    end
     return if session[:email]
     return if /google_oauth2/.match?(request.path)
 
