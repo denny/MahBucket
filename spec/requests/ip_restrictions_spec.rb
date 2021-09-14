@@ -52,13 +52,11 @@ RSpec.describe "User attempts to view items", type: :request do
   end
 
   it 'Allows a matching ip in a custom header with basic permitted-IPs list' do
-    Rails.logger.debug("Allows a matching ip in a custom header with basic permitted-IPs list")
     allow( ApplicationController ).to receive( :client_ip_header_from_env ).and_return('CF-Connecting-Ip')
     allow( ApplicationController ).to receive( :permitted_ips_from_env ).and_return( '127.0.0.1' )
 
     get '/', headers: {'CF-Connecting-Ip' => '127.0.0.1' }
 
-    Rails.logger.debug("BODY: #{response.body}")
     expect( response.body ).to have_css 'a[href="/search"]'
   end
 end
