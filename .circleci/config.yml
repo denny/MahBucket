@@ -13,6 +13,7 @@ jobs:
         - RACK_ENV=test
         - RAILS_ENV=test
         - DATABASE_URL=postgres://testuser:testpass@127.0.0.1:5432/mahbucket_test
+        - SKIP_AUTH=true
 
       - image: circleci/postgres:10-alpine-ram
         environment:
