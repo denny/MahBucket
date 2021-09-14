@@ -33,7 +33,7 @@ Metrics/BlockLength:
 # This set of tests use IP addresses for good reasons
 Style/IpAddresses:
   Exclude:
-    - spec/features/ip_restrictions_spec.rb
+    - spec/requests/ip_restrictions_spec.rb
 
 # This might be worth enabling at some point?
 Bundler/GemVersion:

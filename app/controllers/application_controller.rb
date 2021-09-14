@@ -9,14 +9,23 @@ class ApplicationController < ActionController::Base
     ENV['PERMITTED_IPS']
   end
 
+  def self.client_ip_header_from_env
+    ENV['CLIENT_IP_HEADER']
+  end
+  
   private
 
   def check_permitted_ips
     return if Rails.env.development?
     return if self.class.permitted_ips_from_env.blank?
 
+    ip_to_verify = self.class.client_ip_header_from_env ? request.headers[self.class.client_ip_header_from_env] : request.ip
+
     ip_addresses = list_of_permitted_ips( self.class.permitted_ips_from_env )
-    return if ip_addresses.include? request.ip
+
+    Rails.logger.debug("check_permitted_ips: checking ip: #{ip_to_verify} against #{ip_addresses}")
+    
+    return if ip_addresses.include? ip_to_verify
 
     render plain: 'Access Denied', status: :unauthorized
   end
@@ -45,6 +54,10 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate
+    if Rails.env.test? && ENV['SKIP_AUTH']
+      session[:email] = 'admin@example.com'
+      return
+    end
     return if session[:email]
     return if /google_oauth2/.match?(request.path)
 
