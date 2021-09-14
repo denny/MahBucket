@@ -45,7 +45,7 @@ RSpec.describe "User attempts to view items", type: :request do
 
   it 'Disallows a non matching ip in a custom header with basic permitted-IPs list' do
     allow( ApplicationController ).to receive( :client_ip_header_from_env ).and_return('CF-Connecting-Ip')
-    allow( ApplicationController ).to receive( :permitted_ips_from_env ).and_return( '' )
+    allow( ApplicationController ).to receive( :permitted_ips_from_env ).and_return( '192.168.0.1' )
     get '/', headers: {'CF-Connecting-Ip' => '127.0.0.1' }
 
     expect( response.body ).to have_text 'Access Denied'
