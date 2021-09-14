@@ -47,7 +47,7 @@ services:
       - RAILS_ENV=test
       - DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL=true
       - SKIP_AUTH=true
-    command: sh -c 'bundle check || bundle install && bundle exec rails db:create  db:environment:set db:schema:load && bundle exec rubocop && bundle exec rspec && puma -C ./config/puma.rb'
+    command: sh -c 'bundle check || bundle install && rm -f /tmp/.X99-lock && bundle exec rails db:create  db:environment:set db:schema:load && bundle exec rubocop && bundle exec rspec && bundle exec puma -C ./config/puma.rb'
 
     
 volumes:
