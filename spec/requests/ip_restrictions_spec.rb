@@ -58,6 +58,7 @@ RSpec.describe "User attempts to view items", type: :request do
 
     get '/', headers: {'CF-Connecting-Ip' => '127.0.0.1' }
 
+    Rails.logger.debug("BODY: #{response.body}")
     expect( response.body ).to have_css 'a[href="/search"]'
   end
 end
