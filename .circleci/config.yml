@@ -38,4 +38,4 @@ jobs:
       - ruby/rubocop-check
       - ruby/rspec-test
       - store_artifacts:
-        path: ./log/
+          path: ./log/
