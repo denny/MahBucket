@@ -176,7 +176,7 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.1.1)
     newrelic_rpm (7.0.0)
-    nio4r (2.5.7)
+    nio4r (2.5.8)
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
@@ -217,7 +217,7 @@ GEM
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     public_suffix (4.0.6)
-    puma (5.3.1)
+    puma (5.5.1)
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
@@ -396,7 +396,7 @@ DEPENDENCIES
   paperclip-meta!
   pg!
   pry-rails!
-  puma (~> 5.3)!
+  puma (~> 5.5)!
   rails (~> 6.0.3)!
   rails-erd!
   repost!
