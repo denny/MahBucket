@@ -1,32 +1,32 @@
-ruby "2.7.3"
+ruby "3.0.0"
 
 source 'https://rubygems.org' do
-  gem 'rails', '~> 6.0.3'
+  gem 'rails', '~> 6.1.0'
 
   # Use postgres as the database for Active Record
   gem 'pg'
   # Use Puma as the app server
   gem 'puma', '~> 5.5'
   # Use SCSS for stylesheets
-  gem 'sass-rails', '~> 6.0'
+  gem 'sass-rails'
   # Use Uglifier as compressor for JavaScript assets
-  gem 'uglifier', '>= 1.3.0'
+  gem 'uglifier'
   # Use CoffeeScript for .coffee assets and views
-  gem 'coffee-rails', '~> 5.0'
+  gem 'coffee-rails'
 
   # Use jquery as the JavaScript library
   gem 'jquery-rails'
   # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-  gem 'turbolinks', '~> 5'
+  gem 'turbolinks'
   # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-  gem 'jbuilder', '~> 2.10'
+  gem 'jbuilder'
   # Use Redis adapter to run Action Cable in production
   # gem 'redis', '~> 3.0'
   # Use ActiveModel has_secure_password
   # gem 'bcrypt', '~> 3.1.7'
 
   # Authenticate via Google OAuth
-  gem 'omniauth', '~> 1.9.1'
+  gem 'omniauth', '>= 1.9.1'
   gem 'omniauth-google-oauth2'
   gem 'repost'
 
@@ -57,11 +57,11 @@ source 'https://rubygems.org' do
     gem 'bundler-audit', require: false
     gem 'capybara'
     gem 'pry-rails'
-    gem 'rspec-rails', '~> 4.0'
+    gem 'rspec-rails'
   end
 
   group :development do
-    gem 'listen', '~> 3.2.1'
+    gem 'listen'
     gem 'rails-erd'
     gem 'rubocop', require: false
     gem 'rubocop-performance', require: false
