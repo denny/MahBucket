@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
     ip_addresses = list_of_permitted_ips( self.class.permitted_ips_from_env )
 
-    Rails.logger.debug("check_permitted_ips: checking ip: #{ip_to_verify} against #{ip_addresses}")
+    Rails.logger.debug { "check_permitted_ips: checking ip: #{ip_to_verify} against #{ip_addresses}" }
     
     return if ip_addresses.include? ip_to_verify
 
