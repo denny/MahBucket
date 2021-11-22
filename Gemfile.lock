@@ -408,7 +408,7 @@ DEPENDENCIES
   listen!
   newrelic_rpm!
   nokogiri (>= 1.11.0.rc4)!
-  omniauth (>= 1.9.1)!
+  omniauth (~> 2.0)!
   omniauth-google-oauth2!
   paperclip (~> 6.1.0)!
   paperclip-meta!
