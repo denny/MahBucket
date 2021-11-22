@@ -168,11 +168,11 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
-    kt-paperclip (6.4.1)
+    kt-paperclip (7.0.1)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
+      marcel (~> 1.0.1)
       mime-types
-      mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -411,7 +411,7 @@ DEPENDENCIES
   jbuilder!
   jquery-rails!
   kaminari!
-  kt-paperclip (~> 6.4, >= 6.4.1)!
+  kt-paperclip (>= 7.0.1)!
   listen!
   newrelic_rpm!
   nokogiri (>= 1.11.0.rc4)!
