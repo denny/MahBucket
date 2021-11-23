@@ -32,11 +32,11 @@ source 'https://rubygems.org' do
 
   # Store files on Amazon S3
   gem 'aws-sdk-s3'
-  gem "kt-paperclip", '>= 7.0.1'
   # Paperclip is no longer maintained and isn't compatible with Ruby 3.
   # We switched to kt-paperclip.  Sadly we use paperclip-meta for width and height
-  # which istied to the original paperclip. The author refused the PR that fixes this
+  # which is tied to the original paperclip. The author refused the PR that fixes this
   # so we're now using a version that someone else has fixed!
+  gem "kt-paperclip", '>= 7.0.1'
   gem 'paperclip-meta', git: 'https://github.com/GoodMeasuresLLC/paperclip-meta'
   # Add tag features
   gem 'acts-as-taggable-on'
