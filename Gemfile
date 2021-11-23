@@ -34,8 +34,8 @@ source 'https://rubygems.org' do
   gem 'aws-sdk-s3'
   gem "kt-paperclip", '>= 7.0.1'
   # gem 'paperclip', '~> 6.1.0'
-  gem 'paperclip-meta'
-
+  # gem 'paperclip-meta'
+  gem 'paperclip-meta', git: 'https://github.com/GoodMeasuresLLC/paperclip-meta'
   # Add tag features
   gem 'acts-as-taggable-on'
 

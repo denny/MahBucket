@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/GoodMeasuresLLC/paperclip-meta
+  revision: 71ca62d8479a9a4787d902413906a38e42c9230d
+  specs:
+    paperclip-meta (3.1.0)
+      kt-paperclip (>= 7.0)
+
 GEM
   specs:
 
@@ -188,9 +195,6 @@ GEM
     mime-types (3.4.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2021.1115)
-    mimemagic (0.3.10)
-      nokogiri (~> 1)
-      rake
     mini_mime (1.1.2)
     mini_portile2 (2.6.1)
     minitest (5.14.4)
@@ -222,14 +226,6 @@ GEM
     omniauth-oauth2 (1.7.2)
       oauth2 (~> 1.4)
       omniauth (>= 1.9, < 3)
-    paperclip (6.1.0)
-      activemodel (>= 4.2.0)
-      activesupport (>= 4.2.0)
-      mime-types
-      mimemagic (~> 0.3.0)
-      terrapin (~> 0.6.0)
-    paperclip-meta (3.1.0)
-      paperclip (>= 5.0)
     parallel (1.21.0)
     parser (3.0.2.0)
       ast (~> 2.4.1)
