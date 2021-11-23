@@ -1,6 +1,6 @@
 # This Dockerfile uses a circleci image for convenience.
 
-FROM circleci/ruby:2.7.3-node-browsers
+FROM circleci/ruby:3.0.0-node-browsers
 
 USER root
 RUN mkdir /app

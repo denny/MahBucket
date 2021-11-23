@@ -67,7 +67,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  # Never trust parameters from the Internet, only allow the whitelist through
+  # Never trust parameters from the Internet, only allow the safelist through
   def item_params
     params.require( :item ).permit( :file, :tag_list )
   end
