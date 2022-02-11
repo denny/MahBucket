@@ -6,7 +6,7 @@ source 'https://rubygems.org' do
   # Use postgres as the database for Active Record
   gem 'pg'
   # Use Puma as the app server
-  gem 'puma', '~> 5.5'
+  gem 'puma', '~> 5.6'
   # Use SCSS for stylesheets
   gem 'sass-rails'
   # Use Uglifier as compressor for JavaScript assets
