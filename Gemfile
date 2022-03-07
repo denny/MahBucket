@@ -1,27 +1,22 @@
 source 'https://rubygems.org' do
-  gem 'rails', '~> 6.0.3'
+  # Rails 6.1
+  gem 'rails', '~> 6.1'
 
   # Use postgres as the database for Active Record
   gem 'pg'
-  # Use Puma as the app server
-  gem 'puma', '~> 5.6'
-  # Use SCSS for stylesheets
-  gem 'sass-rails', '~> 6.0'
-  # Use Uglifier as compressor for JavaScript assets
-  gem 'uglifier', '>= 1.3.0'
-  # Use CoffeeScript for .coffee assets and views
-  gem 'coffee-rails', '~> 5.0'
-
+  # Use Puma as the webserver
+  gem 'puma'
+  
   # Use jquery as the JavaScript library
   gem 'jquery-rails'
-  # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-  gem 'turbolinks', '~> 5'
-  # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-  gem 'jbuilder', '~> 2.10'
-  # Use Redis adapter to run Action Cable in production
-  # gem 'redis', '~> 3.0'
-  # Use ActiveModel has_secure_password
-  # gem 'bcrypt', '~> 3.1.7'
+  # Use Uglifier as compressor for JavaScript assets
+  gem 'uglifier'
+  # Use SCSS for stylesheets
+  gem 'sass-rails'
+  # Use CoffeeScript for .coffee assets and views
+  gem 'coffee-rails'
+  # Turbolinks makes navigating your webapp faster: https://github.com/turbolinks/turbolinks
+  gem 'turbolinks'
 
   # Authenticate via Google OAuth
   gem 'omniauth', '~> 1.9.1'
@@ -30,7 +25,7 @@ source 'https://rubygems.org' do
 
   # Store files on Amazon S3
   gem 'aws-sdk-s3'
-  gem 'paperclip', '~> 6.1.0'
+  gem 'paperclip'
   gem 'paperclip-meta'
 
   # Add tag features
@@ -46,22 +41,19 @@ source 'https://rubygems.org' do
   gem "nokogiri", ">= 1.11.0.rc4"
 
   group :development, :test do
-    # Audit gems for security vulnerabilities
     gem 'brakeman'
     gem 'bundler-audit', require: false
     gem 'capybara'
     gem 'pry-rails'
-    gem 'rspec-rails', '~> 4.0'
+    gem 'rspec-rails'
   end
 
   group :development do
-    gem 'listen', '~> 3.2.1'
-    gem 'rails-erd'
+    gem 'listen'
     gem 'rubocop', require: false
     gem 'rubocop-performance', require: false
     gem 'rubocop-rails', require: false
     gem 'rubocop-rspec', require: false
-
   end
 
   group :test do
