@@ -6,7 +6,7 @@ source 'https://rubygems.org' do
   gem 'pg'
   # Use Puma as the webserver
   gem 'puma'
-
+  
   # Use jquery as the JavaScript library
   gem 'jquery-rails'
   # Use Uglifier as compressor for JavaScript assets
