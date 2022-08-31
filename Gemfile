@@ -24,7 +24,7 @@ source 'https://rubygems.org' do
   # gem 'bcrypt', '~> 3.1.7'
 
   # Authenticate via Google OAuth
-  gem 'omniauth', '~> 1.9.1'
+  gem 'omniauth', '~> 1.9.2'
   gem 'omniauth-google-oauth2'
   gem 'repost'
 
