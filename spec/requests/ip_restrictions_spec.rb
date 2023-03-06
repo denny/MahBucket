@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "User attempts to view items", type: :request do
+RSpec.describe "User attempts to view items" do
   it 'allows anyone if there are no permitted-IPs list' do
     allow( ApplicationController ).to receive( :permitted_ips_from_env ).and_return( nil )
 

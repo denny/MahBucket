@@ -5,7 +5,7 @@ OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
     uid: '12345',
     info: {
       name:  'Alice Tester',
-      email: "alice@#{ENV['GOOGLE_OAUTH_DOMAIN']}"
+      email: "alice@#{ENV.fetch('GOOGLE_OAUTH_DOMAIN', nil)}"
     }
   }
 )

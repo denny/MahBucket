@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "User views items", type: :feature, js: true do
+RSpec.describe "User views items", js: true do
   it 'successfully' do
     visit '/'
 

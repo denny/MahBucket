@@ -6,11 +6,11 @@ class ApplicationController < ActionController::Base
   before_action :authenticate
 
   def self.permitted_ips_from_env
-    ENV['PERMITTED_IPS']
+    ENV.fetch('PERMITTED_IPS', nil)
   end
 
   def self.client_ip_header_from_env
-    ENV['CLIENT_IP_HEADER']
+    ENV.fetch('CLIENT_IP_HEADER', nil)
   end
 
   private
@@ -58,7 +58,7 @@ class ApplicationController < ActionController::Base
       return
     end
     return if session[:email]
-    return if /google_oauth2/.match?(request.path)
+    return if request.path.include?('google_oauth2')
 
     redirect_post('/auth/google_oauth2', options: {authenticity_token: :auto})
   end
