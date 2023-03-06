@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Create/Update/Delete items', type: :request do
+RSpec.describe 'Create/Update/Delete items' do
   before do
     allow_any_instance_of( ItemsController ).to receive( :authenticate ).and_return(nil)
   end
