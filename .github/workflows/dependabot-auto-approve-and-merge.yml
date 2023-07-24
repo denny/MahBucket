@@ -30,7 +30,6 @@ jobs:
         id: slack
         uses: slackapi/slack-github-action@v1.24.0
         with:
-          channel-id: ${{ secrets.TECHTEAM_SLACK_CHANNEL_ID }}
           alert-lookup: true
           payload: |
             {
@@ -46,5 +45,6 @@ jobs:
               ]
             }
         env:
-          SLACK_DEPENDENCY_BOT_TOKEN: ${{ secrets.SLACK_DEPENDENCY_BOT_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.DEPENDABOT_SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
           PULL_REQUEST_URL: "https://github.com/${{ github.repository }}/pull/${{ github.event.number }}"
