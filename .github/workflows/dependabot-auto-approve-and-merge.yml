@@ -1,0 +1,50 @@
+name: Dependabot auto-approve and auto-merge
+on: pull_request
+
+permissions:
+  pull-requests: write
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    steps:
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v1
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Approve a minor|patch PR
+        if: ${{steps.metadata.outputs.update-type == 'version-update:semver-patch' || steps.metadata.outputs.update-type == 'version-update:semver-minor'}}
+        run: gh pr review --approve "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Merge a minor|patch PR
+        if: ${{steps.metadata.outputs.update-type == 'version-update:semver-patch' || steps.metadata.outputs.update-type == 'version-update:semver-minor'}}
+        run: gh pr merge --auto --merge "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Post to Slack
+        id: slack
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          channel-id: ${{ secrets.TECHTEAM_SLACK_CHANNEL_ID }}
+          alert-lookup: true
+          payload: |
+            {
+              "text": "Updated dependency ${{ steps.dependabot-metadata.outputs.dependency-names }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Updated dependency ${{ steps.dependabot-metadata.outputs.dependency-names }} from ${{steps.dependabot-metadata.outputs.previous-version}} to ${{steps.dependabot-metadata.outputs.new-version}}.\nFixes security advisory ${{steps.dependabot-metadata.outputs.ghsa-id}}\n\n<${{env.PULL_REQUEST_URL}}|View pull request>"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_DEPENDENCY_BOT_TOKEN: ${{ secrets.SLACK_DEPENDENCY_BOT_TOKEN }}
+          PULL_REQUEST_URL: "https://github.com/${{ github.repository }}/pull/${{ github.event.number }}"
