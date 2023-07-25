@@ -7,5 +7,5 @@ permissions:
 
 jobs:
   dependabot-workflow:
-    uses: 38degrees/github-workflows/workflows/dependabot-auto-approve-and-merge.yml@main
+    uses: 38degrees/github-workflows/.github/workflows/dependabot-auto-approve-and-merge.yml@main
     
